@@ -1,0 +1,1027 @@
+Microsoft Windows [Version 10.0.18363.1621]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\Users\d976640>git config --global --list
+user.name=MohitMotiani99
+user.email=mohitmotiani211@gmail.com
+core.editor='C:\Program Files\Sublime Text\sublime_text.exe' -w
+core.autocrlf=true
+http.proxy=
+color.ui=false
+
+C:\Users\d976640>git config --global color.ui auto
+
+C:\Users\d976640>git config --global --list
+user.name=MohitMotiani99
+user.email=mohitmotiani211@gmail.com
+core.editor='C:\Program Files\Sublime Text\sublime_text.exe' -w
+core.autocrlf=true
+http.proxy=
+color.ui=auto
+
+C:\Users\d976640>git config --global color.ui yellow
+
+C:\Users\d976640>git config --global --list
+user.name=MohitMotiani99
+user.email=mohitmotiani211@gmail.com
+core.editor='C:\Program Files\Sublime Text\sublime_text.exe' -w
+core.autocrlf=true
+http.proxy=
+color.ui=yellow
+
+C:\Users\d976640>git config --global color.ui auto
+
+C:\Users\d976640>git config --global user.name
+MohitMotiani99
+
+C:\Users\d976640>git config --global user.email "mohitmotiani211@gmail.com"
+
+C:\Users\d976640>git config --global user.email
+mohitmotiani211@gmail.com
+
+C:\Users\d976640>git config --global -e
+
+C:\Users\d976640>cd C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>cd ..
+
+C:\Users\d976640\Desktop\M1W4\9_8_21>cd ..
+
+C:\Users\d976640\Desktop\M1W4>git init
+Initialized empty Git repository in C:/Users/d976640/Desktop/M1W4/.git/
+
+C:\Users\d976640\Desktop\M1W4>cd 9_8_21/gitCommands
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../../gitcommands.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../
+        ../../gitcommands.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git status -s
+?? ../
+?? ../../gitcommands.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git add .
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>dir
+ Volume in drive C is OS
+ Volume Serial Number is 7C79-4B61
+
+ Directory of C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands
+
+10/08/2021  12:35 AM    <DIR>          .
+10/08/2021  12:35 AM    <DIR>          ..
+10/08/2021  12:35 AM                13 file1.txt
+               1 File(s)             13 bytes
+               2 Dir(s)  169,085,992,960 bytes free
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git status -s
+A  file1.txt
+?? ../../gitcommands.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git commit -m "file1 created"
+[master (root-commit) ebd8451] file1 created
+ 1 file changed, 1 insertion(+)
+ create mode 100644 9_8_21/gitCommands/file1.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git remote add origin https://github.com/MohitMotiani99/telstra_m1w4
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 318 bytes | 79.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/MohitMotiani99/telstra_m1w4/pull/new/master
+remote:
+To https://github.com/MohitMotiani99/telstra_m1w4
+ * [new branch]      master -> master
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../../gitcommands.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git status -s
+?? ../../gitcommands.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git status -s
+ M file1.txt
+?? file2.txt
+?? ../../gitcommands.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git diff
+diff --git a/9_8_21/gitCommands/file1.txt b/9_8_21/gitCommands/file1.txt
+index d88c464..bc1b4bc 100644
+--- a/9_8_21/gitCommands/file1.txt
++++ b/9_8_21/gitCommands/file1.txt
+@@ -1 +1,4 @@
+-This is file1
+\ No newline at end of file
++This is file1
++It was
++me all
++along.
+\ No newline at end of file
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git diff file2.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git diff file1.txt
+diff --git a/9_8_21/gitCommands/file1.txt b/9_8_21/gitCommands/file1.txt
+index d88c464..bc1b4bc 100644
+--- a/9_8_21/gitCommands/file1.txt
++++ b/9_8_21/gitCommands/file1.txt
+@@ -1 +1,4 @@
+-This is file1
+\ No newline at end of file
++This is file1
++It was
++me all
++along.
+\ No newline at end of file
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git diff --staged
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git add file2.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git status -s
+ M file1.txt
+A  file2.txt
+?? ../../gitcommands.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git diff --staged
+diff --git a/9_8_21/gitCommands/file2.txt b/9_8_21/gitCommands/file2.txt
+new file mode 100644
+index 0000000..98d636c
+--- /dev/null
++++ b/9_8_21/gitCommands/file2.txt
+@@ -0,0 +1 @@
++file2 is here
+\ No newline at end of file
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git commit -m "this is for second file only"
+[master 96c30e9] this is for second file only
+ 1 file changed, 1 insertion(+)
+ create mode 100644 9_8_21/gitCommands/file2.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git push origin master
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (5/5), 391 bytes | 97.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/MohitMotiani99/telstra_m1w4
+   ebd8451..96c30e9  master -> master
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git diff --staged file1.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git status -s
+ M file1.txt
+?? ../../gitcommands.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git diff file1.txt
+diff --git a/9_8_21/gitCommands/file1.txt b/9_8_21/gitCommands/file1.txt
+index d88c464..bc1b4bc 100644
+--- a/9_8_21/gitCommands/file1.txt
++++ b/9_8_21/gitCommands/file1.txt
+@@ -1 +1,4 @@
+-This is file1
+\ No newline at end of file
++This is file1
++It was
++me all
++along.
+\ No newline at end of file
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git add file1.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git diff file1.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git diff --staged file1.txt
+diff --git a/9_8_21/gitCommands/file1.txt b/9_8_21/gitCommands/file1.txt
+index d88c464..bc1b4bc 100644
+--- a/9_8_21/gitCommands/file1.txt
++++ b/9_8_21/gitCommands/file1.txt
+@@ -1 +1,4 @@
+-This is file1
+\ No newline at end of file
++This is file1
++It was
++me all
++along.
+\ No newline at end of file
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git status -s
+M  file1.txt
+?? ../../gitcommands.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git commit -m "first file has been commited now"
+[master 5f4ed07] first file has been commited now
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git push origin master
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (5/5), 408 bytes | 81.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/MohitMotiani99/telstra_m1w4
+   96c30e9..5f4ed07  master -> master
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git status -s
+ M file2.txt
+?? ../../gitcommands.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git reset file2.txt
+Unstaged changes after reset:
+M       9_8_21/gitCommands/file2.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git status -s
+ M file2.txt
+?? ../../gitcommands.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git restore file2.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git status -s
+?? ../../gitcommands.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git diff
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git diff file2.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git diff --staged file2.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git add file2.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git status -s
+?? ../../gitcommands.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git diff --staged
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git diff file2.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git diff file2.txt
+diff --git a/9_8_21/gitCommands/file2.txt b/9_8_21/gitCommands/file2.txt
+index 98d636c..3e625f1 100644
+--- a/9_8_21/gitCommands/file2.txt
++++ b/9_8_21/gitCommands/file2.txt
+@@ -1 +1,2 @@
+-file2 is here
+\ No newline at end of file
++file2 is here
++this got updated
+\ No newline at end of file
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git status -s
+ M file2.txt
+?? ../../gitcommands.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git reset file2.txt
+Unstaged changes after reset:
+M       9_8_21/gitCommands/file2.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git status -s
+ M file2.txt
+?? ../../gitcommands.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git diff file2.txt
+diff --git a/9_8_21/gitCommands/file2.txt b/9_8_21/gitCommands/file2.txt
+index 98d636c..3e625f1 100644
+--- a/9_8_21/gitCommands/file2.txt
++++ b/9_8_21/gitCommands/file2.txt
+@@ -1 +1,2 @@
+-file2 is here
+\ No newline at end of file
++file2 is here
++this got updated
+\ No newline at end of file
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git restore file2.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git status -s
+?? ../../gitcommands.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git diff file2.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git add file2.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git commit -m "testing restore"
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../../gitcommands.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git push origin master
+Everything up-to-date
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git log
+commit 5f4ed0710a3823ce73a6e33f25c061f0d5f90bfb (HEAD -> master, origin/master)
+Author: MohitMotiani99 <mohitmotiani211@gmail.com>
+Date:   Tue Aug 10 00:51:32 2021 +0530
+
+    first file has been commited now
+
+commit 96c30e9ba3464c59691d5331aed61425f623b7f5
+Author: MohitMotiani99 <mohitmotiani211@gmail.com>
+Date:   Tue Aug 10 00:48:39 2021 +0530
+
+    this is for second file only
+
+commit ebd8451e36bfba2bb3c13d48708209c7a8cbb28a
+Author: MohitMotiani99 <mohitmotiani211@gmail.com>
+Date:   Tue Aug 10 00:38:32 2021 +0530
+
+    file1 created
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git log --oneline
+5f4ed07 (HEAD -> master, origin/master) first file has been commited now
+96c30e9 this is for second file only
+ebd8451 file1 created
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git log master
+commit 5f4ed0710a3823ce73a6e33f25c061f0d5f90bfb (HEAD -> master, origin/master)
+Author: MohitMotiani99 <mohitmotiani211@gmail.com>
+Date:   Tue Aug 10 00:51:32 2021 +0530
+
+    first file has been commited now
+
+commit 96c30e9ba3464c59691d5331aed61425f623b7f5
+Author: MohitMotiani99 <mohitmotiani211@gmail.com>
+Date:   Tue Aug 10 00:48:39 2021 +0530
+
+    this is for second file only
+
+commit ebd8451e36bfba2bb3c13d48708209c7a8cbb28a
+Author: MohitMotiani99 <mohitmotiani211@gmail.com>
+Date:   Tue Aug 10 00:38:32 2021 +0530
+
+    file1 created
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git log --online main
+fatal: ambiguous argument 'main': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git log --oneline main
+fatal: ambiguous argument 'main': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git log --oneline master
+5f4ed07 (HEAD -> master, origin/master) first file has been commited now
+96c30e9 this is for second file only
+ebd8451 file1 created
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git diff 96c30e9 ebd8451
+diff --git a/9_8_21/gitCommands/file2.txt b/9_8_21/gitCommands/file2.txt
+deleted file mode 100644
+index 98d636c..0000000
+--- a/9_8_21/gitCommands/file2.txt
++++ /dev/null
+@@ -1 +0,0 @@
+-file2 is here
+\ No newline at end of file
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git diff ebd8451 96c30e9
+diff --git a/9_8_21/gitCommands/file2.txt b/9_8_21/gitCommands/file2.txt
+new file mode 100644
+index 0000000..98d636c
+--- /dev/null
++++ b/9_8_21/gitCommands/file2.txt
+@@ -0,0 +1 @@
++file2 is here
+\ No newline at end of file
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git show
+commit 5f4ed0710a3823ce73a6e33f25c061f0d5f90bfb (HEAD -> master, origin/master)
+Author: MohitMotiani99 <mohitmotiani211@gmail.com>
+Date:   Tue Aug 10 00:51:32 2021 +0530
+
+    first file has been commited now
+
+diff --git a/9_8_21/gitCommands/file1.txt b/9_8_21/gitCommands/file1.txt
+index d88c464..bc1b4bc 100644
+--- a/9_8_21/gitCommands/file1.txt
++++ b/9_8_21/gitCommands/file1.txt
+@@ -1 +1,4 @@
+-This is file1
+\ No newline at end of file
++This is file1
++It was
++me all
++along.
+\ No newline at end of file
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git show [SHA]
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git show
+commit 5f4ed0710a3823ce73a6e33f25c061f0d5f90bfb (HEAD -> master, origin/master)
+Author: MohitMotiani99 <mohitmotiani211@gmail.com>
+Date:   Tue Aug 10 00:51:32 2021 +0530
+
+    first file has been commited now
+
+diff --git a/9_8_21/gitCommands/file1.txt b/9_8_21/gitCommands/file1.txt
+index d88c464..bc1b4bc 100644
+--- a/9_8_21/gitCommands/file1.txt
++++ b/9_8_21/gitCommands/file1.txt
+@@ -1 +1,4 @@
+-This is file1
+\ No newline at end of file
++This is file1
++It was
++me all
++along.
+\ No newline at end of file
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git log --oneline master
+5f4ed07 (HEAD -> master, origin/master) first file has been commited now
+96c30e9 this is for second file only
+ebd8451 file1 created
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git show 96c30e9
+commit 96c30e9ba3464c59691d5331aed61425f623b7f5
+Author: MohitMotiani99 <mohitmotiani211@gmail.com>
+Date:   Tue Aug 10 00:48:39 2021 +0530
+
+    this is for second file only
+
+diff --git a/9_8_21/gitCommands/file2.txt b/9_8_21/gitCommands/file2.txt
+new file mode 100644
+index 0000000..98d636c
+--- /dev/null
++++ b/9_8_21/gitCommands/file2.txt
+@@ -0,0 +1 @@
++file2 is here
+\ No newline at end of file
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git status -s
+?? file3.txt
+?? ../../gitcommands.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git commit -am "direct commit"
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file3.txt
+        ../../gitcommands.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git commit --am "direct commit"
+error: pathspec 'direct commit' did not match any file(s) known to git
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git add .
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git status -s
+A  file3.txt
+?? ../../gitcommands.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git commit -m "3rd file"
+[master 7fe6f82] 3rd file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 9_8_21/gitCommands/file3.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git push origin master
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (5/5), 414 bytes | 207.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/MohitMotiani99/telstra_m1w4
+   5f4ed07..7fe6f82  master -> master
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git commit -am "direct commit for 3rd file"
+[master f736092] direct commit for 3rd file
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git status -s
+?? ../../gitcommands.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git push origin master
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (5/5), 395 bytes | 197.00 KiB/s, done.
+Total 5 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/MohitMotiani99/telstra_m1w4
+   7fe6f82..f736092  master -> master
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git status -s
+ M file3.txt
+?? ../../gitcommands.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git status -s
+ D file3.txt
+?? ../../gitcommands.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git resest file3.txt
+git: 'resest' is not a git command. See 'git --help'.
+
+The most similar command is
+        reset
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git reset file3.txt
+fatal: ambiguous argument 'file3.txt': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git restore file3.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git status -s
+?? ../../gitcommands.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git status -s
+?? file4.txt
+?? ../../gitcommands.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git add .
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git status -s
+A  file4.txt
+?? ../../gitcommands.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git diff --staged
+diff --git a/9_8_21/gitCommands/file4.txt b/9_8_21/gitCommands/file4.txt
+new file mode 100644
+index 0000000..5c784e3
+--- /dev/null
++++ b/9_8_21/gitCommands/file4.txt
+@@ -0,0 +1 @@
++deadly mutation will be performed on this file
+\ No newline at end of file
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git mv file4.txt file4xyz.py
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git diff --staged
+diff --git a/9_8_21/gitCommands/file4xyz.py b/9_8_21/gitCommands/file4xyz.py
+new file mode 100644
+index 0000000..5c784e3
+--- /dev/null
++++ b/9_8_21/gitCommands/file4xyz.py
+@@ -0,0 +1 @@
++deadly mutation will be performed on this file
+\ No newline at end of file
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git status -s
+A  file4xyz.py
+?? ../../gitcommands.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git commit -m "file4 was renamed"
+[master f38899d] file4 was renamed
+ 1 file changed, 1 insertion(+)
+ create mode 100644 9_8_21/gitCommands/file4xyz.py
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git push origin master
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (5/5), 416 bytes | 138.00 KiB/s, done.
+Total 5 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/MohitMotiani99/telstra_m1w4
+   f736092..f38899d  master -> master
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git log --oneline master
+f38899d (HEAD -> master, origin/master) file4 was renamed
+f736092 direct commit for 3rd file
+7fe6f82 3rd file
+5f4ed07 first file has been commited now
+96c30e9 this is for second file only
+ebd8451 file1 created
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git show f38899d
+commit f38899dc46986aae685c4ad12c7c64578f6c2b2e (HEAD -> master, origin/master)
+Author: MohitMotiani99 <mohitmotiani211@gmail.com>
+Date:   Tue Aug 10 01:16:35 2021 +0530
+
+    file4 was renamed
+
+diff --git a/9_8_21/gitCommands/file4xyz.py b/9_8_21/gitCommands/file4xyz.py
+new file mode 100644
+index 0000000..5c784e3
+--- /dev/null
++++ b/9_8_21/gitCommands/file4xyz.py
+@@ -0,0 +1 @@
++deadly mutation will be performed on this file
+\ No newline at end of file
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git restore f736092
+error: pathspec 'f736092' did not match any file(s) known to git
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git checkout f736092
+Note: switching to 'f736092'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at f736092 direct commit for 3rd file
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git log --onelne
+fatal: unrecognized argument: --onelne
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git log --oneline
+f736092 (HEAD) direct commit for 3rd file
+7fe6f82 3rd file
+5f4ed07 first file has been commited now
+96c30e9 this is for second file only
+ebd8451 file1 created
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git checkout
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git log --oneline
+f736092 (HEAD) direct commit for 3rd file
+7fe6f82 3rd file
+5f4ed07 first file has been commited now
+96c30e9 this is for second file only
+ebd8451 file1 created
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git commit -m "this is it"
+HEAD detached at f736092
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../../gitcommands.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git revert
+usage: git revert [<options>] <commit-ish>...
+   or: git revert <subcommand>
+
+    --quit                end revert or cherry-pick sequence
+    --continue            resume revert or cherry-pick sequence
+    --abort               cancel revert or cherry-pick sequence
+    --skip                skip current commit and continue
+    --cleanup <mode>      how to strip spaces and #comments from message
+    -n, --no-commit       don't automatically commit
+    -e, --edit            edit the commit message
+    -s, --signoff         add a Signed-off-by trailer
+    -m, --mainline <parent-number>
+                          select mainline parent
+    --rerere-autoupdate   update the index with reused conflict resolution if possible
+    --strategy <strategy>
+                          merge strategy
+    -X, --strategy-option <option>
+                          option for merge strategy
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git log --oneline
+f736092 (HEAD) direct commit for 3rd file
+7fe6f82 3rd file
+5f4ed07 first file has been commited now
+96c30e9 this is for second file only
+ebd8451 file1 created
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git push origin master
+Everything up-to-date
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git status -s
+?? ../../gitcommands.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git status -s
+?? file5.txt
+?? ../../gitcommands.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git add .
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git commit -m "file5 added during detached head"
+[detached HEAD f05e17d] file5 added during detached head
+ 1 file changed, 1 insertion(+)
+ create mode 100644 9_8_21/gitCommands/file5.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git push origin master
+Everything up-to-date
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git history
+git: 'history' is not a git command. See 'git --help'.
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git --history
+unknown option: --history
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git show
+commit f05e17db3d156df63cee5fb8450a69d3e1c96d51 (HEAD)
+Author: MohitMotiani99 <mohitmotiani211@gmail.com>
+Date:   Tue Aug 10 01:28:38 2021 +0530
+
+    file5 added during detached head
+
+diff --git a/9_8_21/gitCommands/file5.txt b/9_8_21/gitCommands/file5.txt
+new file mode 100644
+index 0000000..7ac2203
+--- /dev/null
++++ b/9_8_21/gitCommands/file5.txt
+@@ -0,0 +1 @@
++created in an alternate timeline
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git log --oneline
+f05e17d (HEAD) file5 added during detached head
+f736092 direct commit for 3rd file
+7fe6f82 3rd file
+5f4ed07 first file has been commited now
+96c30e9 this is for second file only
+ebd8451 file1 created
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git checkout -
+Warning: you are leaving 1 commit behind, not connected to
+any of your branches:
+
+  f05e17d file5 added during detached head
+
+If you want to keep it by creating a new branch, this may be a good time
+to do so with:
+
+ git branch <new-branch-name> f05e17d
+
+Switched to branch 'master'
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git commit -m "checking"
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../../gitcommands.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git push origin master
+Everything up-to-date
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git log --oneline
+f38899d (HEAD -> master, origin/master) file4 was renamed
+f736092 direct commit for 3rd file
+7fe6f82 3rd file
+5f4ed07 first file has been commited now
+96c30e9 this is for second file only
+ebd8451 file1 created
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git revert f736092
+[master 3d22d84] Revert "direct commit for 3rd file"
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git status -s
+?? ../../gitcommands.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git commit -m "back in time"
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../../gitcommands.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git push origin master
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (5/5), 454 bytes | 227.00 KiB/s, done.
+Total 5 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/MohitMotiani99/telstra_m1w4
+   f38899d..3d22d84  master -> master
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git log --oneline
+3d22d84 (HEAD -> master, origin/master) Revert "direct commit for 3rd file"
+f38899d file4 was renamed
+f736092 direct commit for 3rd file
+7fe6f82 3rd file
+5f4ed07 first file has been commited now
+96c30e9 this is for second file only
+ebd8451 file1 created
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git revert 96c30e9
+Removing 9_8_21/gitCommands/file2.txt
+[master fa5ddc4] Revert "this is for second file only"
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 9_8_21/gitCommands/file2.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git push origin master
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 385 bytes | 192.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/MohitMotiani99/telstra_m1w4
+   3d22d84..fa5ddc4  master -> master
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git log --oneline
+fa5ddc4 (HEAD -> master, origin/master) Revert "this is for second file only"
+3d22d84 Revert "direct commit for 3rd file"
+f38899d file4 was renamed
+f736092 direct commit for 3rd file
+7fe6f82 3rd file
+5f4ed07 first file has been commited now
+96c30e9 this is for second file only
+ebd8451 file1 created
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git status -s
+?? ../../gitcommands.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git status -s
+?? file5.txt
+?? file6.txt
+?? ../../gitcommands.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git add file5.text
+fatal: pathspec 'file5.text' did not match any files
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git add file5.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git status -s
+A  file5.txt
+?? file6.txt
+?? ../../gitcommands.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git commit -m "file5 added"
+[master b8fb1fe] file5 added
+ 1 file changed, 1 insertion(+)
+ create mode 100644 9_8_21/gitCommands/file5.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git push origin master
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (5/5), 383 bytes | 191.00 KiB/s, done.
+Total 5 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/MohitMotiani99/telstra_m1w4
+   fa5ddc4..b8fb1fe  master -> master
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git add file6.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git diff --staged file6.txt
+diff --git a/9_8_21/gitCommands/file6.txt b/9_8_21/gitCommands/file6.txt
+new file mode 100644
+index 0000000..8a49cf3
+--- /dev/null
++++ b/9_8_21/gitCommands/file6.txt
+@@ -0,0 +1,9 @@
++and obv this
++
++is
++
++
++file
++
++
++6.
+\ No newline at end of file
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git commit -m "file6 added"
+[master 43622c0] file6 added
+ 1 file changed, 9 insertions(+)
+ create mode 100644 9_8_21/gitCommands/file6.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git push origin master
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (5/5), 385 bytes | 128.00 KiB/s, done.
+Total 5 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/MohitMotiani99/telstra_m1w4
+   b8fb1fe..43622c0  master -> master
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git log --oneline
+43622c0 (HEAD -> master, origin/master) file6 added
+b8fb1fe file5 added
+fa5ddc4 Revert "this is for second file only"
+3d22d84 Revert "direct commit for 3rd file"
+f38899d file4 was renamed
+f736092 direct commit for 3rd file
+7fe6f82 3rd file
+5f4ed07 first file has been commited now
+96c30e9 this is for second file only
+ebd8451 file1 created
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git revert b8fb1fe
+Removing 9_8_21/gitCommands/file5.txt
+[master a829de5] Revert "file5 added"
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 9_8_21/gitCommands/file5.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git push origin master
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 377 bytes | 188.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/MohitMotiani99/telstra_m1w4
+   43622c0..a829de5  master -> master
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git rm file3.txt
+rm '9_8_21/gitCommands/file3.txt'
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git commit -m "file3 removed"
+[master b10fb69] file3 removed
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 9_8_21/gitCommands/file3.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git push origin master
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 316 bytes | 158.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/MohitMotiani99/telstra_m1w4
+   a829de5..b10fb69  master -> master
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git status -s
+?? file9.txt
+?? ../../gitcommands.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git add .
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git mv file9.txt ./fldr/file9.txt
+fatal: renaming '9_8_21/gitCommands/file9.txt' failed: No such file or directory
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git status -s
+A  file9.txt
+?? ../../gitcommands.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git mv file9.txt ./fldr/file9.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git status -s
+A  fldr/file9.txt
+?? ../../gitcommands.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git add .
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git status -s
+A  fldr/file9.txt
+?? ../../gitcommands.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git commit -m "file9 moved to another location"
+[master 6f56e8b] file9 moved to another location
+ 1 file changed, 1 insertion(+)
+ create mode 100644 9_8_21/gitCommands/fldr/file9.txt
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>git push origin master
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (6/6), 430 bytes | 107.00 KiB/s, done.
+Total 6 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/MohitMotiani99/telstra_m1w4
+   b10fb69..6f56e8b  master -> master
+
+C:\Users\d976640\Desktop\M1W4\9_8_21\gitCommands>
