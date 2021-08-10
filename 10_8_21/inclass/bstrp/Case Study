@@ -1,0 +1,10 @@
+Case Study
+
+	jason wants to create a web page to write reate an email;
+	page specs ae
+	1. page should contain text fileds t accept to,cc,bcc,sections
+	2. A button to send or cancel email
+	3. A txt area to enter mail message
+	4. buttons for mgmt
+	5. page should be properly boostapped
+	6.use proper icon images

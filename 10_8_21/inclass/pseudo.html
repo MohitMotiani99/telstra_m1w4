@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+		div h3:first-child{
+			color: red;
+		}
+		div h3{
+			color: blue;
+		}
+		div h3:last-child{
+			color: green;
+		}
+		div div h3:first-child{
+			color: yellow;
+		}
+		p::before{
+			comment: "This is before paragraph";
+		}
+		p::after{
+			comment: "This is after paragraph";
+		}
+		div::first-letter{
+			font-size: 50px;
+		}
+	</style>
+</head>
+<body>
+	<p>Paragraph 1</p>
+	<p>Paragraph 2</p>
+	<div>
+		Div
+		<h3>First h3</h3>
+		<h3>Second h3</h3>
+		<h3>Last h3</h3>
+		<div>
+			<h3>First p h3</h3>
+			<h3>Last p h3</h3>
+		</div>
+	</div>
+</body>
+</html>

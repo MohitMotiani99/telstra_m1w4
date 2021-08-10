@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+		div{
+			background-color: blue;
+			width: 100px;
+			height: 100px;
+		}
+		#greenbox{
+			background-color: green;
+			width: 100px;
+			height: 100px;
+		}
+		.pinkbox{
+			color: blue;
+			background-color: pink;
+			width: 120px;
+			height: 120px;
+			text-align: center;
+			text-decoration: overline;
+			text-transform: uppercase;
+			text-indent: 20px;
+			text-shadow: 2px 2px;
+
+
+			font-family: Arial;
+			font-style: oblique;
+			font-size: 20px;
+
+			border-style: solid groove;
+			border-width: 5px 10px;
+			border-color: orange;
+			border-top-style: dotted;
+			border-right-style: groove;
+			border-radius: 15px;
+
+			margin-top: 100px;
+			margin-left: 50px;
+			margin-bottom: 200px;
+
+		}
+		ol.liststyling{
+			list-style-type: lower-roman;
+			list-style-type: lower-greek;
+		}
+		ul.liststyling{
+			list-style-type: square;
+			list-style-image: url();
+			list-style-position: inside;
+		}
+	</style>
+</head>
+<body>
+	<!--id selector overwrites other selectors-->
+	<div id="greenbox">
+		Div with css
+	</div>
+	<div class="pinkbox">
+		New Div
+	</div>
+	<!--HTML CSS allows sharing of same id but it is bas practice-->
+	<!--similarly name should be unique
+	<div class="pinkbox">
+		Another pinkbox
+	</div>
+	why name attribute if we have id?
+	<p class="pinkbox">
+		This is a paragraph not a div
+	</p>
+	-->
+	<ol class="liststyling">
+		<li>Apple</li>
+		<li>Orange</li>
+		<li>Melon</li>
+	</ol>
+	<ul class="liststyling" style="list-style-position: outside;">
+		<li>Apple</li>
+		<li>Orange
+			<ul class="liststyling">
+				<li>Fresh</li>
+				<li>Stale</li>
+			</ul>
+		</li>
+		<li>Melon</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style >
+		*{
+			color: green;
+			font-size: 40px;
+		}
+		div p{
+			color: orange;
+		}
+		div > p{
+			color: blue;
+		}
+		div,p{
+			color: yellow;
+		}
+		input[type="text"]{
+			color: pink;
+		}
+		div + p{
+			color: darkred;
+		}
+		div ~ p{
+			color: indigo;
+		}
+	</style>
+</head>
+<body>
+	
+	<div>
+		this is div
+	</div>
+	<p>
+		This is para outside div
+	</p>
+	<!--Styled p directly after div == direct sibling only-->
+	<p>
+		This is not direct sibling of above div
+	</p>
+	<div>
+		<p>Para inside div</p>
+		<!--Direct child one will apply here finally-->
+		<h3><p>P inside h3 inside div</p></h3>
+		<!--Also gets style by div p selector-->
+	</div>
+	Enter:
+	<input type="text" name="">
+	<!--Elements with a particular attribute value-->
+
+</body>
+</html>
