@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		function check(){
+			var uname = document.getElementById('uname').value;
+			if(uname.length<5){
+				alert('invalid username')
+				return;
+			}
+
+			var pass =document.getElementById('pass').value;
+			if(pass.length<=6 || pass.length>=11){
+				alert('invalid password')
+				return;
+			}
+
+			var email = document.getElementById('em').value
+			
+	var pattern="^[a-zA-Z0-9]{3,}@^[a-zA-Z0-9]{3,}\.com";
+            Regex regex = new Regex(pattern);
+            bool results = regex.IsMatch(email);
+
+
+			if(results){
+				alert('invalid id')
+				return;
+			}
+
+
+			document.getElementById('ans').innerHTML="Valid Details"
+		}
+	</script>
+</head>
+<body>
+	<form>
+		Enter Username:
+		<input type="text" name="uname" id="uname">
+		Enter Password:
+		<input type="password" name="pass" id="pass">
+		Enter Email ID:
+		<input type="text" name="em" id="em">
+		<input type="button" name="" value="check details" onclick="check()">
+		<p id="ans"></p>
+	</form>
+</body>
+</html>

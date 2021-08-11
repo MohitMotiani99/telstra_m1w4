@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		function viewprod(){
+			document.getElementById('prod').style.display='inline';
+		}
+		function hideprod(){
+			document.getElementById('prod').style.display='none';	
+		}
+		function fun(){
+			document.getElementById('info').innerHTML=parseInt(document.getElementById('pr').value)*0.05
+		}
+	</script>
+</head>
+<body>
+	<div style="background-color:red;width: 200px;height: 100px;" onmouseover="viewprod()" onmouseout="hideprod()">Know more about product
+
+		<div id="prod" style="background-color:green;display: none;">
+		Name:Book<br>
+		Price:200
+	</div>
+
+	</div>
+	
+
+	Enter Price:
+	<input type="text" id="pr" onkeyup="fun()">
+	<p id="info"></p>
+</body>
+</html>

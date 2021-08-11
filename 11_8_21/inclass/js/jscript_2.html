@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		
+		employee={
+			employeename:"Harry",
+			department:"Finance",
+			designation:"Lead",
+			salary:100000,
+
+		}
+
+		document.write("<br>")
+		document.write("Employee name: "+employee.employeename)
+		document.write("<br>")
+		document.write("Department :"+employee.department)
+		document.write("<br>")
+		document.write("Designation :"+employee.designation)
+		document.write("<br>")
+		document.write("Emp Salary :"+employee.salary)
+
+
+		document.write("<br>")
+
+		for(var attr in employee){
+			document.write(attr+" : "+employee[attr])
+			document.write("<br>")
+		}
+
+		document.write("Using Stringify<br>")
+		document.write(JSON.stringify(employee))
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

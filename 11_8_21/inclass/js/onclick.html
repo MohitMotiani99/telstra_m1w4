@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		function sayhello(){
+			alert('hello to user')
+		}
+		function pageloadmsg(){
+			alert("page loaded")
+		}
+		function viewchange(){
+			alert('element changed')
+		}
+	</script>
+</head>
+<body onload="pageloadmsg()">
+	<select onchange="viewchange()">
+		<option>yes</option>
+		<option>no</option>
+	</select>
+
+	
+	<input type="button" onclick="sayhello()" value="say hello to user">
+</body>
+</html>

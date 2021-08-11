@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		function print_msg(){
+			document.write("Hello func")
+		}
+		function calc(a,b){
+			document.write(a+b)
+		}
+		print_msg();
+		document.write("<br>")
+		calc(12,23)
+		document.write("<br>")
+		calc("Hello"," World")
+		document.write("<br>")
+		calc({"first":1,"second":2},{"a":"first","b":"second"})
+		document.write("<br>")
+
+
+		function calc2(a,b)
+		{
+			return a+b;
+		}
+		document.write(calc2(10,12))
+		document.write("<br>")
+
+		var myfunc=function(a,b){
+			return a+b;
+		}
+		document.write(myfunc(2,33))
+		document.write("<br>")
+
+
+		function callfunc(myfunc,a,b){
+			document.write(myfunc(a,b));
+		}
+		callfunc(myfunc,1,44)
+		document.write("<br>")
+
+
+
+		
+
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

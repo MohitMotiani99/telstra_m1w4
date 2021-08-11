@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		document.write("<select>")
+		for(i=0;i<10;i++){
+			document.write("<option>")
+			document.write(i)
+			document.write("</option>")
+		}
+		document.write("</select>")
+		document.write("<br>")
+
+		cities=['delhi','mumbai','kolkata','chennai']
+		document.write("<select>")
+		for(i=0;i<cities.length;i++){
+			document.write("<option>")
+			document.write(cities[i])
+			document.write("</option>")
+		}
+		document.write("</select>")
+		document.write("<br>")	
+
+
+
+		i=0
+
+		while(i<10){
+			document.write("<div style='background-color:pink;width:20;height:20'>"+i+"</div>")
+			i++;
+		}
+
+		do{
+			document.write("<div style='background-color:pink;width:20;height:20'>"+i+"</div>")
+			i++;
+		}while(i<10);
+
+
+		fruits=['apple','mango','banana']
+		for(str in fruits){
+			document.write("<p style='background-color:yellow'>")
+			document.write(fruits[str])
+			document.write("</p>")
+		}		
+	</script>
+</head>
+<body>
+
+</body>
+</html>

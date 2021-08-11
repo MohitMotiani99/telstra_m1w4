@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		function viewOffer() {
+			document.getElementById('offerbox').innerHTML="<p style='font-size: 20;color: green;'>50%discount of purchase over 5000</p>"
+		}
+		function hideOffer(){
+			document.getElementById('offerbox').innerHTML="<p style='font-size: 20;color: green;'>hurry up</p>"	
+		}
+	</script>
+</head>
+<body>
+	<div id="offerbox" style="background-color: pink;width: 200;height: 200;" onmouseover="viewOffer()" onmouseout="hideOffer()">
+		<p style="font-size: 20;color: red;">
+			OFFER ON SALE
+		</p>
+	</div>
+</body>
+</html>

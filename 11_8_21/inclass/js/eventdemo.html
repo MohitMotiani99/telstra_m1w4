@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		function checkname(){
+			var data=document.getElementById('username').value
+			if(data.length>3)
+			{
+				document.getElementById('info').innerHTML=data+" is correct"
+			}
+			else{
+				document.getElementById('info').innerHTML=data+ " is incorrect "	
+			}
+		}
+	</script>
+</head>
+<body>
+
+	Enter name
+	<input type="text" id="username" /><br>
+	<input type="button" value="check name is valid" onclick="checkname()">
+	<p id='info'></p>
+
+</body>
+</html>

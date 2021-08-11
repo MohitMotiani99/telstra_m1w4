@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		function si(principal,rate,time){
+			return principal*rate*time/100;
+		}
+		function printobj(obj){
+			document.write(JSON.stringify(obj))
+			document.write("<br>")
+		}
+		function pushobj(objarr,obj){
+			objarr.push(obj)
+			printobj(obj)
+		}
+
+		var objarr=[]
+		item={
+			"ItemName":"Book",
+			"Price":200,
+			"Quantity":10,
+			"ItemType":"Educational"
+		}
+		item2={
+			"ItemName":"Pen",
+			"Price":20,
+			"Quantity":100,
+			"ItemType":"Stationary",
+			"Returnale":true
+		}
+		pushobj(objarr,item)
+		pushobj(objarr,item2)
+
+		document.write("SI for 1000,5,2 :"+si(1000,5,2))
+	</script>
+</head>
+<body>
+
+</body>
+</html>

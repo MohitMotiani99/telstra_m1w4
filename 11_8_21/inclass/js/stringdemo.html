@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		var str="hello"
+		document.write(str);
+		document.write("\n")
+		document.write(str[1])
+		document.write("\n")
+		document.write(str.charAt(2))
+		document.write("\n")
+		document.write(str.charCodeAt(2))
+		document.write("<br>")
+		var str2="Good"
+		document.write(str+str2)
+		document.write("<br>")
+		document.write(str.concat(str2))
+		document.write("<br>")
+		document.write(str.endsWith("lo"))
+		document.write("<br>")
+		document.write(str.endsWith("ol"))
+		document.write("<br>")
+		document.write(str.toUpperCase())
+		document.write("<br>")
+		document.write(str.toLowerCase())
+		document.write("<br>")
+		str2="World          "
+
+		fruitlist="apple,mango,banana,mango"
+		mylist=fruitlist.split(",")
+		document.write("<br>")
+		document.write(mylist[1])
+		document.write("<br>")
+		mylist2=fruitlist.split("")
+		document.write(mylist2[1])
+		document.write("<br>")
+		document.write(fruitlist.search('mango'))
+		document.write("<br>")
+		document.write(fruitlist.replace('mango','orange'))
+		//replaces all instances
+		document.write("<br>")
+		document.write(fruitlist.repeat(4))
+		document.write("<br>")
+		document.write(fruitlist.lastIndexOf('mango'))
+		document.write("<br>")
+		document.write(fruitlist.indexOf('mango'))
+		
+		document.write(str1.concat(str2.trim()))
+	</script>
+</head>
+<body>
+
+</body>
+</html>

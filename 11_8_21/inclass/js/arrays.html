@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		var fruitlist=['apple','banana','mango','strawberry']
+		document.write("<br>")
+		document.write(fruitlist[1])
+		document.write("<br>")
+		document.write(fruitlist[3])
+		document.write("<br>")
+		document.write(fruitlist.length)
+		document.write("<br>")
+		fruitlist.push('papaya')
+		document.write(fruitlist)
+		//changes the array
+		document.write("<br>")
+		document.write(fruitlist.length)
+		document.write("<br>")
+		document.write(fruitlist.pop())
+		//changes
+		document.write("<br>")
+		document.write(fruitlist)
+		document.write("<br>")
+		fruitlist.sort();
+		document.write(fruitlist)
+		document.write("<br>")
+		fruitlist.reverse();
+		document.write(fruitlist)
+		document.write("<br>")
+		fruitlist.push(100)
+		document.write(fruitlist)
+		document.write("<br>")
+		var arr=[]
+		//not bound to any datatype
+		person={
+			person_name:"peter",
+			address:"23 old street"
+		}
+		arr.push(person)
+		document.write(arr[0].person_name)
+		arr.push(true)
+		document.write(arr)
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
