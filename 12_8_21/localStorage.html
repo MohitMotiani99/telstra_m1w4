@@ -1,0 +1,33 @@
+
+<!--
+	
+	localStorage : Used to store value in key value formay=t.present even when browser closed
+
+	sessionStorage : used to store value in kv pair,lost after browser closed
+	
+
+	open()
+	close()
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		localStorage.setItem('usename','adminuse')
+		localStorage.setItem('Hello','worls')
+
+		document.write(localStorage.getItem('usename'))
+		document.write(localStorage.getItem('Hello'))
+
+		localStorage.setItem('Hello','snorlax')
+		document.write(localStorage.getItem('Hello'))		
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

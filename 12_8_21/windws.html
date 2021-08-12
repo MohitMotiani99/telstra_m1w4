@@ -1,0 +1,43 @@
+<!--
+
+	Windows obj
+
+1. represents browser window
+2. all funs and vars are directly accessible
+
+ppts
+
+closed:returns boolean true if window closed else false
+console
+document:-used to rep current doc
+history:used to represent history of curr dooc
+-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		if(closed){
+			alert('closed')
+		}
+		else{
+			alert('not closed')
+		}
+
+		// console.log('on the console')
+		// setTimeout(function(){
+		// 	console.clear()
+		// },2000)
+
+		console.log('height of window '+innerHeight)
+		console.log('width of window '+innerWidth)
+
+
+	</script>
+</head>
+<body>
+</body>
+</html>

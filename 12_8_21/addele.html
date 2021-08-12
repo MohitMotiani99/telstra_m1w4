@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		function addele(tag){
+			console.log(tag)
+			var d = document.getElementsByTagName(tag)
+			var para =document.createElement('p')
+			var textnode = document.createTextNode('This is text node')
+			para.appendChild(textnode)
+			d[0].appendChild(para)
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="add a para" onclick="addele('body')">
+	<div style="background-color:orange;width:100px;height:100px" onclick="addele(this.tagName)">
+		
+		<p>1st para</p>
+	</div>
+</body>
+</html>

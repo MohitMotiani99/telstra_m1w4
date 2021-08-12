@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		function addbefore(){
+			var data=document.getElementById('mydata').value
+			var element = document.getElementById('mylist')
+			var li = document.createElement('li')
+
+			var t = document.createTextNode(data)
+			li.appendChild(t)
+			element.insertBefore(li,element.childNodes[0])
+			document.getElementById('mydata').value=''
+		}
+		function addafter(){
+			var data=document.getElementById('mydata').value
+			var element = document.getElementById('mylist')
+			var li = document.createElement('li')
+
+			var t = document.createTextNode(data)
+			li.appendChild(t)
+			element.append(li,element.childNodes[element.childNodes.length-1])
+			document.getElementById('mydata').value=''
+		}
+
+		function insertmiddle(){
+			var data=document.getElementById('mydata').value
+			var pos = document.getElementById('pos').value
+			var element = document.getElementById('mylist')
+			var li = document.createElement('li')
+
+			var t = document.createTextNode(data)
+			li.appendChild(t)
+			
+
+
+			element.insertBefore(li,element.children[pos-1])
+			document.getElementById('mydata').value=''
+		}
+		function removebefore(){
+			var element=document.getElementById('mylist')
+			element.removeChild(element.children[0])
+		}
+		function removeafter(){
+			var element = document.getElementById('mylist')
+			element.removeChild(element.children[element.children.length-1])
+		}
+		function removeany(){
+			var element = document.getElementById('mylist')
+			var pos = document.getElementById('pos').value
+			element.removeChild(element.children[pos-1])
+		}
+		function replace(){
+			var element = document.getElementById('mylist')
+			var data = document.getElementById('mydata').value
+			var blank=document.createElement(' ')
+			element.append(blank)
+			var li = document.createElement('li')
+
+			var text = document.createTextNode(data)
+			li.appendChild(text)
+
+			element.replaceChild(li,element.childNodes[0])
+			//using childNodes adds node if list empty
+			//using children gives error
+		}
+	</script>
+</head>
+<body>
+	Text:
+	<input type="text" id="mydata">
+	<br>
+	Position:
+	<input type="number" id="pos">
+	<ul id="mylist">
+		<li>apple</li>
+
+	</ul>
+	<!-- atleast 1 space should be there even if no elements to childNodes to work , blank also works a textnode 
+
+		childnodes fetches all nodes
+		children only fetches tag nodes-->
+	<input type="button" onclick="addbefore()" value="add before">
+	<input type="button" onclick="addafter()" value="add after">
+	<input type="button" onclick="insertmiddle()" value="add any(give pos)">
+	<input type="button" onclick="removebefore()" value="remove first">
+	<input type="button" onclick="removeafter()" value="remove last">
+	<input type="button" onclick="removeany()" value="remove any(give pos)">
+	<input type="button" onclick="replace()" value="replace">
+
+</body>
+</html>

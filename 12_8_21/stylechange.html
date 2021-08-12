@@ -1,0 +1,47 @@
+<!--
+	Operations on DOM
+
+		1.changing elements
+		2. changing styles
+
+
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		.box{
+			background-color: orange;
+			width: 200px;
+			height: 200px;
+			font-size: 20px;
+		}
+		.newbox{
+			background-color: yellow;
+			height: 300px;
+			width: 300px;
+/*			font-size: 100px;
+*/		}
+	</style>
+	<script type="text/javascript">
+		function changestyle() {
+			// body...
+			 var data = document.getElementById('mydiv')
+			// data.style.backgroundColor='green'
+			// data.style.fontSize="20px"
+			// data.style.color="red"
+			// data.style.borderStyle="solid"
+
+			data.className+=" newbox"
+			//later classes override similar ppts
+		}
+	</script>
+</head>
+<body>
+	<div id="mydiv" onclick="changestyle()" class="box">
+		THis is inside div
+	</div>
+</body>
+</html>

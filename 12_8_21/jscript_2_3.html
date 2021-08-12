@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		function getele(){
+			alert(document.getElementsByTagName('div')[0].children[1].children[1].innerHTML)
+		}
+	</script>
+</head>
+<body>
+	<div style="background-color:green;width:300px;height:300px" onclick="getele()">
+
+		Div 1
+
+		<div style="background-color:yellow;width:100px;height:100px">
+			Div1.1
+		</div>
+		<div style="background-color:yellow;width:100px;height:100px">
+			Div1.2
+
+			<div style="background-color:blue;width:80px;height:40px">Div1.2.1</div>
+			<div style="background-color:blue;width:80px;height:40px">Div1.2.2</div>
+		</div>
+
+	</div>
+</body>
+</html>

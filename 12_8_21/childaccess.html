@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		
+	</style>
+	<script type="text/javascript">
+		function getchild(){
+			var elist = document.getElementsByTagName('div')
+			console.log("length")
+			console.log(elist.length)
+			for(i=0;i<elist.length;i++)
+				console.log(elist[i])
+			console.log(elist[0].children[0])
+			console.log(elist[0].children[1])//undefined
+			console.log(elist[0].children[2])//undefined
+
+			console.log(elist[0].children[0].children[0])
+			console.log(elist[0].children[0].children[1].innerHTML)
+		}
+	</script>
+</head>
+<body>
+	<div style="background-color:orange;width: 300px;height: 300px;" onclick="getchild()">
+		This is outer div
+		<div style="background-color:yellow;height: 200px;width: 200;">
+			This is inner div
+			<div style="background-color:blue;height: 80px;width: 80px;">
+				this is inner inner 1 div
+			</div>
+			<div style="background-color:blue;height: 80px;width: 80px;">
+				this is inner inner 2 div
+			</div>
+		</div>
+	</div>
+</body>
+</html>

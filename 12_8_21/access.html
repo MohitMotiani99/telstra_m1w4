@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		
+		function getele() {
+			// body...
+			var divs = document.getElementsByTagName('div');
+			console.log(divs.length)
+			divs[0].style.height="300px"
+			//console.log(divs[0][0])
+			divs[1].style.height="200px"
+		}
+
+	</script>
+</head>
+<body>
+	<div style="background-color:pink;height:100px;width: 100px;" onclick="getele()">
+		
+		<div style="background-color:green;width:60px;height:60px">
+			
+			<div style="background-color:blue;width:20px;height:20px"></div>
+
+		</div>
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		function validate(){
+			data =document.forms['regform']
+			em=data['email'].value
+			uname=data['uname'].value
+			pass=data['pass'].value
+
+			pat1=/.{1,}/
+			if(em.match(pat1)==null || uname.match(pat1)==null || pass.match(pat1)==null){
+				alert('complete the fields')
+				return;
+			}
+
+			pat2=/...../
+			pat3=/......./
+			if(uname.match(pat2)==null){
+				alert('username should be 5 chars')
+				return;
+			}
+			if(pass.match(pat3)==null){
+				alert('password should be 7 chars')
+				return;
+			}
+
+			pe=/\w*@\w*\.com$/
+			if(em.match(pe)==null){
+				alert('enter valid email')
+			}
+			
+		}
+	</script>
+</head>
+<body>
+	<form name="regform">
+		Enter email:
+		<input type="text" name="email">
+		Enter Username:
+		<input type="text" name="uname">
+		Enter Password:
+		<input type="password" name="pass">
+		<input type="button" value="register" onclick="validate()">
+	</form>
+</body>
+</html>

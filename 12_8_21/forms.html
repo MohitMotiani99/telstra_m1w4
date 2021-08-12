@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		function login(){
+			var data = document.forms["userform"]
+			var username=data['username'].value
+			var password=data['password'].value
+
+			alert(username+password)
+		}
+	</script>
+</head>
+<body>
+	<form method="post" accept="#" name="userform">
+		ENter user name:
+		<input type="text" name="username">
+		Enter Password:
+		<input type="password" name="password">
+		<input type="button" value="login" onclick="login()">
+	</form>
+</body>
+</html>

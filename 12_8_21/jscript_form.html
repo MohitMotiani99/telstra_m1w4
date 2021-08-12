@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		function validate(){
+			form=document.forms['fm']
+			// uname=form['uname'].value
+			// pass=form['pass'].value
+			val=form['val'].value
+
+			if(val=='yes')
+				form.noValidate=false;
+			else
+				form.noValidate=true;
+
+			if(form.noValidate){
+				alert('no validation ur form will submit')
+				form.action="http://google.com"
+				form.submit()
+			}
+			else{
+				alert('validation will happen on password')
+				
+			}
+		}
+		function checkpass(){
+			//pat=/\w*@\w*\.con$/
+			pat1=/\d{2,}/
+			pat2=/\w{6,}/
+			pat3=/.{11,}/
+			// if(uname.match(pat)==null)
+			// 		alert('enter valid email id')
+			// if(pass.match()==null || pass.match(\w{6,})==null || pass.match(.{11,})==null)
+			// 		alert('enter valid pass')
+			// form.reset()
+
+			pass=document.forms['fm']['pass'].value
+
+			c1=document.getElementById('c1')
+			c2=document.getElementById('c2')
+			c3=document.getElementById('c3')
+
+			if(pass.match(pat1))
+				c1.children[0].src='yes.png'
+			else
+				c1.children[0].src='no.jpg'
+
+			if(pass.match(pat2))
+				c2.children[0].src='yes.png'
+			else
+				c2.children[0].src='no.jpg'
+
+			if(pass.match(pat3))
+				c3.children[0].src='yes.png'
+			else
+				c3.children[0].src='no.jpg'
+		}
+	</script>
+	<style type="text/css">
+		img{
+			height: 10px;
+			width: 10px;
+		}
+	</style>
+</head>
+<body>
+	<form name="fm">
+
+		Validate:
+		<input type="radio" name="val" value="yes" onselect="validate()">YES
+		<input type="radio" name="val" value="no" onselect="validate()">NO
+
+		<input type="button" value="validate" onclick="validate()">
+
+		<br>
+
+		Username:
+		<input type="text" name="uname"><br>
+		Password:
+		<input type="password" name="pass" onkeyup="checkpass()">
+		<br>
+		<p id="c1" style="display:inline;">At least 2 nums
+			<img src="no.jpg">
+		</p><br>
+		<p id="c2" style="display:inline;">At least 6 chars
+			<img src="no.jpg">
+		</p><br>
+		<p id="c3" style="display:inline;">At least 11 length
+			<img src="no.jpg">
+		</p><br>
+		
+
+	</form>
+</body>
+</html>

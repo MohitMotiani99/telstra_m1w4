@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		function getelement(){
+			var data = document.getElementsByTagName('p')
+			data[0].innerHTML="This is my para"
+			alert(data[0].innerHTML)
+		}
+	</script>
+</head>
+<body>
+	<p id="mypara" onclick="getelement()">
+		my para
+	</p>
+</body>
+</html>

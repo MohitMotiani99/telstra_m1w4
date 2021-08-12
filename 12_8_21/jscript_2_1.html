@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		function gettag() {
+			var divs =document.getElementsByTagName('div')
+			for(i=0;i<divs.length;i++)
+				divs[i].innerHTML="You have been tag updated"
+		
+			setTimeout(function(){
+				var divs =document.getElementsByClassName('box')
+			for(i=0;i<divs.length;i++)
+				divs[i].innerHTML="You have been class updated"		
+			},2000)
+		}
+		
+	</script>
+</head>
+<body>
+	<div class ="box" style="background-color:yellow;width: 100px;height: 100px;" onclick="gettag()">My div 1</div>
+	<div class ="box" style="background-color:yellow;width: 100px;height: 100px;" onclick="gettag()">My div 2</div>
+</body>
+</html>

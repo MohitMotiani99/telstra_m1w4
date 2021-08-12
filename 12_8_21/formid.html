@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		function login(){
+			var form = document.getElementById('myform')
+
+			var validation=form.noValidate
+			//sets if form data to be not validate or not on submission
+			alert(validation)
+
+			form.noValidate=true;
+			alert(form.noValidate)
+
+			form.action="http://www.yahoo.com"
+			//form.method="POST"
+			alert(form.method+" "+form.action)
+			//form.submit()//takes the latest action value
+			form.reset()//resets the form
+		}
+	</script>
+</head>
+<body>
+	<form accept="http://google.com" id="myform">
+		ENter user name:
+		<input type="text" name="username">
+		Enter Password:
+		<input type="password" name="password">
+		<input type="button" value="login" onclick="login()">
+	</form>
+</body>
+</html>

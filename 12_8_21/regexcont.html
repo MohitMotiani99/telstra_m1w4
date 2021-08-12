@@ -1,0 +1,49 @@
+<!--
+
+Grouping Expr
+	
+	Operators 
+	()
+	| or operator
+	+
+
+	syntax
+		pattern|(pattern|pattern)|(pattern|c)
+
+
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		patt = /Hello|...../
+		data = "peter"
+		document.write(data.match(patt))
+		document.write("<br>")
+		patt=/Hello+...../
+		data="HelloooooWorld"
+		document.write(data.match(patt))
+		document.write("<br>")
+		patt=/(Hello|World)+(Peter|Sam)/
+		data="HelloHelloPeter"
+		document.write(data.match(patt))
+		document.write("<br>")
+		data="HelloooPeter"
+		document.write(data.match(patt))
+		document.write("<br>")
+
+
+		
+
+		patt=/(\w+*b\w*c+\w*){5,}/
+		data="bbbbb"
+		document.write(data.match(patt))
+		document.write("<br>")
+	</script>
+</head>
+<body>
+
+</body>
+</html>

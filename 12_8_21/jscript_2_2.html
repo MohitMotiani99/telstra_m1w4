@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		.box{
+			background-color: green;
+			height: 100px;
+			width: 200px;
+			transition: width 1s;
+			font-size: 10px;
+			transition-timing-function: ease-in-out;
+		}
+		.newbox{
+			font-size: 100px;
+		}
+	</style>
+	<script type="text/javascript">
+		function adds(){
+			data=document.getElementById('div')
+			data.style.width="300px"
+			data.style.fontSize="20px"
+
+			data.className+=" newbox"
+			//even if this comes later it cant override the changes made inline above
+			console.log(data.className+data.style.fontSize)
+		}
+		function back(){
+			data=document.getElementById('div')
+			data.style.width="200px"
+			data.style.fontSize="10px"
+		}
+	</script>
+</head>
+<body>
+	<div id ="div" class="box" onmouseenter="adds()" onmouseout="back()">My div is being styled</div>
+</body>
+</html>

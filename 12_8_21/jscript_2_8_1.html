@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		localStorage.setItem('hello','world')
+		sessionStorage.setItem('chop','sticks')
+
+
+		function writ(){
+
+
+			document.getElementById('local').innerHTML+=localStorage.getItem('hello')
+			document.getElementById('session').innerHTML+=sessionStorage.getItem('chop')
+		}
+	</script>
+</head>
+<body>
+	<h1 id="local">Value for key 'hello' is :</h1>
+	<h1 id="session">Value for key 'chop' is :</h1>
+
+	<input type="button" name="" value="Display" onclick="writ()">
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!--
+	Methods to access parts of model
+		-body has to be loaded to access these elements
+
+		getElementById() This returns a single element
+		getElementsByTag() This returns collection of elements(array)
+		getElementsByClassName
+		getElementsByName
+
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		function getelement(){
+			var data = document.getElementById('mypara').innerHTML
+			alert(data)
+		}
+	</script>
+</head>
+<body>
+	<p id="mypara" onclick="getelement()">
+		This is my para
+	</p>
+</body>
+</html>
