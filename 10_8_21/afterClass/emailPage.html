@@ -6,105 +6,66 @@
 	
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-	<style >
-		body{
-			background-image: repeating-linear-gradient(165deg, #ccc, #ccc 10px, #dbdbdb 10px, #dbdbdb 20px);
-		}
-
-		#headrow{
-			background-color: black;
-			text-align: center;
-			margin-bottom: 30px;
-			position: sticky;
-			/*left: 0px;
-			right: 0px;*/
-			/*height: 100px;
-			width: 100px;*/
-		}
-		div > div:nth-child(2){
-			background-color: pink;
-		}
-		#headimg{
-			height: 100px;
-			width: 140px;
-			position: absolute;
-			top: 0px;
-			right: 0px;
-		}
-		#heading{
-			text-align: center;
-			font-size: 40px;
-			font-family: monospace;
-			color: yellow;
-			/*left: 10px;*/
-		}
-		input[type="email"]{
-			border : solid;
-			margin: 0px;
-		}
-		textarea[class="form-control"]{
-			border: double;
-		}
-		h6{
-			font-size: 25px;
-			font-family:cambria,courier,arial,helvetica;
-			display: inline-block;
-			top: 5px;
-			font-weight: bold;
-		}
-		div[class="col-sm-3"]{
-			text-align: center;
-			cursor: pointer;
-		}
-		div[class="col-sm-3"]:hover{
-			background-color: deeppink;
-			transition: 1s;
-		}
-		img{
-			height: 20px;
-			width: 20px;
-			position: relative;
-			/*top: 7px;
-			left: 80px;*/
-		}
-		.form-control:hover{
-			background-color: floralwhite;
-			transition: 0.2s;
-			transition-timing-function: ease-in-out;
-		}
-		button{
-			text-decoration: none;
-			border: dotted;
-			background-color: inherit;
-		}
-		form div button{
-			border: solid;
-		}
-		.form-group{
-			margin: 0px;
-		}
-
-		</style>
+    <script type="text/javascript" src="app.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
+
+	<nav class="navbar navbar-expand bg-info text-white">
+		
+		<div class="container-fluid">
+			<ul class="navbar-nav mr-auto">
+				
+				<li class="nav-item">
+					<button class="btn btn-default">Home</button>
+				</li>
+				<li class="nav-item">
+					<button class="btn btn-default">Inbox</button>
+				</li>
+				<li class="nav-item">
+					<button class="btn btn-default" onclick="newMail()">Compose</button>
+				</li>
+				
+				
+			</ul>
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					LogOut
+				</li>
+				<li class="nav-item">
+					Support
+				</li>
+				<li class="nav-item">
+					About Us
+				</li>
+				<li class="nav-item">
+					Contact Us
+				</li>
+			</ul>
+
+		</div>
+
+	</nav>
 
 	<div class="container">
 		
 		<div class="row" id="headrow" style="height:100px;">
 			<img src="email.png" class="img-fluid rounded float-right" id="headimg">
-			<p id="heading">Email Service</p>
+			<p id="heading">Jason Email Service</p>
 			
 		</div>
 
-		<div class="row" style="background-color:inherit; margin-bottom: 30px;">
+		<!-- <div class="row" style="background-color:inherit; margin-bottom: 30px;">
 			<button class="btn btn-info">
 				<img src="back.png" class=" img-fluid rounded" style="position:relative;top: -2px;left: -2px;">
 				Inbox
 			</button>
 		</div>
-
+ -->
 		<div class="row" style="margin-bottom: 30px;">
 			
 			
@@ -116,56 +77,82 @@
 			</label>
 			</div>
 
-			<button type="button" class="btn btn-success col-sm-3">
+			<button type="button" class="btn btn-success col-sm-3"
+
+			onclick="sendMail(this)">
 				<img src="send.png" class="img-fluid" >
 			Send</button>
 
-			<button type="button" class="btn btn-danger col-sm-3">
+			<button type="button" class="btn btn-danger col-sm-3"
+
+			onclick="newMail()">
 				<img src="discard.jpg" class="img-fluid">
 			Discard</button>
  
 		</div>
 
+		<div class="row col-sm-12">
+		<span id="sendnoti" class="badge badge-success col-sm-12" style="display:none;">Sent</span>
+		</div>
+		
+
 		<form>
 			
 			<div class="form-group">
 				<label for="to_address">To: </label>
-				<input type="email" class="form-control" name="to_address" id="to_address">
+				<input type="email" class="form-control" name="to_address" id="to_address"
+
+				onchange=checkMail(this) 
+
+				>
 				
 			</div>
 
 			<div class="form-group">
 				<label for="cc_address">Cc: </label>
-				<input type="email" class="form-control" name="cc_address" id="cc_address">
+				<input type="email" class="form-control" name="cc_address" id="cc_address"
+
+				onchange="checkMail(this)" 
+
+				>
 				
 			</div>
 
 			<div class="form-group">
 				<label for="bcc_address">Bcc: </label>
-				<input type="email" class="form-control" name="bcc_address" id="bcc_address">
+				<input type="email" class="form-control" name="bcc_address" id="bcc_address"
+
+				onchange="checkMail(this)"
+
+				>
 				
 			</div>
 
 			<div class="row" style="margin-top:40px;margin-bottom: 40px;">
 			<div class="col-sm-2" style="background-color: papayawhip;"><p>Format</p></div>
 
-			<button class="btn btn-primary col-sm-2">
+			<button type="button" class="btn btn-primary col-sm-2" onclick="do_bold()" value="unselected" id="bold">
 				<img src="bold.png" class="img-fluid rounded">
 			</button>
 
-			<button class="btn btn-primary col-sm-2">
+			<button type="button" class="btn btn-primary col-sm-2"
+			onclick="do_italic()" value="unselected" id="italic">
 				<img src="italics.png" class="img-fluid rounded">
 			</button>
 
-			<button class="btn btn-primary col-sm-2">
+			<button type="button" class="btn btn-primary col-sm-2"
+			onclick="do_underline()" value="unselected" id="underline">
 				<img src="underline.png" class="img-fluid rounded">
 			</button>
 
-			<button class="btn btn-warning col-sm-2">
+			<button type="button" class="btn btn-warning col-sm-2"
+			
+			onclick="undo()"
+			>
 				<img src="undo.png" class="img-fluid rounded">
 			</button>
 
-			<button class="btn btn-warning col-sm-2">
+			<button type="button" class="btn btn-warning col-sm-2">
 				<img src="redo.png" class="img-fluid rounded">
 			</button>
 
@@ -180,7 +167,11 @@
 
 			<div class="form-group">
 				<label for="draft">Content: </label>
-				<textarea class="form-control" name="draft" id="draft" rows=10></textarea>
+				<textarea class="form-control" name="draft" id="draft" value="place" placeholder="Mail Body...." rows=10 
+					onkeyup="applyDraftFont()" 
+					onselect="applyDraftFont()"
+
+				></textarea>
 				
 			</div>
 

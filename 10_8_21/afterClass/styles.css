@@ -1,0 +1,93 @@
+body{
+	background-image: repeating-linear-gradient(25deg, #ccc, #ccc 10px, #dbdbdb 10px, #dbdbdb 20px);
+}
+#headrow{
+	background-color: black;
+	text-align: center;
+	margin-bottom: 30px;
+	position: sticky;
+	/*left: 0px;
+	right: 0px;*/
+	/*height: 100px;
+	width: 100px;*/
+}
+div > div:nth-child(2){
+	background-color: pink;
+}
+#headimg{
+	height: 100px;
+	width: 140px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+#heading{
+	text-align: center;
+	font-size: 40px;
+	font-family: monospace;
+	color: yellow;
+	/*left: 10px;*/
+}
+input[type="email"]{
+	border : solid;
+	margin: 0px;
+}
+textarea[class="form-control"]{
+	border: double;
+}
+h6{
+	font-size: 25px;
+	font-family:cambria,courier,arial,helvetica;
+	display: inline-block;
+	top: 5px;
+	font-weight: bold;
+}
+div[class="col-sm-3"]{
+	text-align: center;
+	cursor: pointer;
+}
+div[class="col-sm-3"]:hover{
+	background-color: deeppink;
+	transition: 1s;
+}
+img{
+	height: 20px;
+	width: 20px;
+	position: relative;
+	/*top: 7px;
+	left: 80px;*/
+}
+.form-control:hover{
+	background-color: floralwhite;
+	transition: 0.2s;
+	transition-timing-function: ease-in-out;
+}
+button{
+	text-decoration: none;
+	border: dotted;
+	background-color: inherit;
+}
+form div button{
+	border: solid;
+}
+.form-group{
+	margin: 0px;
+}
+li[class="nav-item"]{
+	margin: 0px 20px;
+}
+nav button{
+	text-decoration: none;
+	margin: 0px;
+	padding: 0px; 
+	align-self: inherit;
+	border: 0px;
+	color: white;
+}
+#draft::selection{
+	font-weight: bold;
+}
+#sendnoti{
+	transition: display 1s;
+	transition-timing-function: ease-in-out;
+}
