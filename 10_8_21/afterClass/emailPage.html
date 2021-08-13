@@ -128,9 +128,30 @@
 				
 			</div>
 
-			<div class="row" style="margin-top:40px;margin-bottom: 40px;">
-			<div class="col-sm-2" style="background-color: papayawhip;"><p>Format</p></div>
 
+			<nav class="navbar navbar-expand navbar-default">
+				
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<button type="button" class="btn btn-default btn-lg"  
+						onclick="showsection('format_section')"
+						>
+					Format</button>
+					</li>
+					<li class="nav-item">
+						<button type="button" class="btn btn-default btn-lg"
+
+						onclick="showsection('option_section')"
+						>Options</button>
+					</li>
+				</ul>
+
+			
+
+
+
+			<div id="format_section" class="row vis">
+			
 			<button type="button" class="btn btn-primary col-sm-2" onclick="do_bold()" value="unselected" id="bold">
 				<img src="bold.png" class="img-fluid rounded">
 			</button>
@@ -159,19 +180,73 @@
 			</div>
 
 
+
+			<div id="option_section" class="row vis">
+				
+				<button type='button' class='btn btn-info'
+				onclick="checkspell(this)" value="unchecked">
+					<img src="spellcheck.png">
+				</button>
+
+				<span class="dropdown">
+				<button type='button' class='btn btn-info dropdown-toggle' id="dropDownMenu" data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+					<img src="zoomin.png">
+				</button>
+
+					<div class="dropdown-menu" aria-labelledby='dropDownMenu'>
+						
+						<a class="dropdown-item" href="#" onclick="zoomin(this)">50%</a>
+						<a class="dropdown-item" href="#" onclick="zoomin(this)">100%</a>
+						<a class="dropdown-item" href="#"onclick="zoomin(this)">150%</a>
+						<a class="dropdown-item" href="#" onclick="zoomin(this)">200%</a>
+
+					</div>
+
+				</span>
+
+				<button type='button' class='btn btn-info' onclick="showfind()">
+					<img src="find.png">
+				</button>
+			</div>
+
+
+
+			</nav>
+
+			<div class="card text-white bg-info" style="display:none">
+				<div class="card-header">
+				</div>
+				<div class="card-body">
+					
+					<h5 class="card-title">Enter Word</h5>
+					<input type="text" id="word" class="form-control"><br>
+					<button type="button" class="btn btn-primary" onclick="find()">Find</button>
+					<button type="button" class="btn btn-secondary" onclick="closefind()">Close</button>
+					<br>
+				</div>
+			</div>
+
+			
+
 			<div class="form-group">
 				<label for="subj">Subject: </label>
 				<textarea class="form-control" name="subj" id="subj"></textarea>
 				
 			</div>
 
-			<div class="form-group">
+			<div class="form-group draft" style="position:relative;">
 				<label for="draft">Content: </label>
-				<textarea class="form-control" name="draft" id="draft" value="place" placeholder="Mail Body...." rows=10 
+				<textarea class="form-control" name="draft" id="draft" value="place" placeholder="Mail Body...." rows=10 style="font-size:20px" 
 					onkeyup="applyDraftFont()" 
 					onselect="applyDraftFont()"
 
-				></textarea>
+				>
+					
+
+				</textarea>
+				<div id="supdiv" class="row col-sm-12">
+					<h4>Find Result:</h4><br>
+				</div>
 				
 			</div>
 
