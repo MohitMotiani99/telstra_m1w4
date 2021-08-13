@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function printdetails(){
+                document.write("Platform: "+navigator.platform)
+                document.write("<br>")
+                document.write("Product: "+navigator.product)
+                document.write("<br>")
+                document.write("Cookie Enabled? : "+navigator.cookieEnabled)
+                document.write("<br>")
+                document.write("Java Enables? :"+navigator.javaEnabled())
+                document.write("<br>")
+                document.write("App Code Name: "+navigator.appCodeName)
+
+                //document.write rewrites the page in every time executed in bulk
+                //The issue is that when you run document.write after the document has loaded, it overwrites the entire document. If it is run before that, it does not overwrite it.
+            }
+            function myloc(){
+                if(navigator.geolocation){
+                    navigator.geolocation.getCurrentPosition(function(position){
+                        document.write(position.coords.latitude)
+                        document.write("<br>")
+                        document.write(position.coords.longitude)
+                        document.write("<br>")
+                    })
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <input type="button" value="Get Details" onclick="printdetails()">
+        <input type="button" value="Get Location Details" onclick="myloc()">
+    </body>
+</html>

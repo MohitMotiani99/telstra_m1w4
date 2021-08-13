@@ -1,0 +1,516 @@
+Microsoft Windows [Version 10.0.18363.1621]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\Users\d976640\Desktop\telstragit>git init
+Initialized empty Git repository in C:/Users/d976640/Desktop/telstragit/.git/
+
+C:\Users\d976640\Desktop\telstragit>git add .
+
+C:\Users\d976640\Desktop\telstragit>git add file1
+fatal: pathspec 'file1' did not match any files
+
+C:\Users\d976640\Desktop\telstragit>git add file1.txt
+
+C:\Users\d976640\Desktop\telstragit>git commit -m "sort functionality updated price low to high"
+[master (root-commit) 84d346b] sort functionality updated price low to high
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file1.txt
+
+C:\Users\d976640\Desktop\telstragit>git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\d976640\Desktop\telstragit>git add file2.txt
+
+C:\Users\d976640\Desktop\telstragit>git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   file2.txt
+
+
+C:\Users\d976640\Desktop\telstragit>git restore --staged file2.txt
+
+C:\Users\d976640\Desktop\telstragit>git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\d976640\Desktop\telstragit>git restore --staged file1.txt
+
+C:\Users\d976640\Desktop\telstragit>git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\d976640\Desktop\telstragit>git add file2.txt
+
+C:\Users\d976640\Desktop\telstragit>git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   file2.txt
+
+
+C:\Users\d976640\Desktop\telstragit>git commit -m "added new file"
+[master 7e197be] added new file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file2.txt
+
+C:\Users\d976640\Desktop\telstragit>git status
+On branch master
+nothing to commit, working tree clean
+
+C:\Users\d976640\Desktop\telstragit>git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\d976640\Desktop\telstragit>git restore file2.txt
+
+C:\Users\d976640\Desktop\telstragit>git status
+On branch master
+nothing to commit, working tree clean
+
+C:\Users\d976640\Desktop\telstragit>git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\d976640\Desktop\telstragit>git add file2.txt
+
+C:\Users\d976640\Desktop\telstragit>git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   file2.txt
+
+
+C:\Users\d976640\Desktop\telstragit>git commit -m "added file2"
+[master 96ea138] added file2
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+C:\Users\d976640\Desktop\telstragit>git status
+On branch master
+nothing to commit, working tree clean
+
+C:\Users\d976640\Desktop\telstragit>git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\d976640\Desktop\telstragit>git commit -am "updated file 1"
+[master dce69b2] updated file 1
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+C:\Users\d976640\Desktop\telstragit>git status
+On branch master
+nothing to commit, working tree clean
+
+C:\Users\d976640\Desktop\telstragit>git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    file2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\d976640\Desktop\telstragit>git restore file2.txt
+
+C:\Users\d976640\Desktop\telstragit>git status -s
+ M file1.txt
+ D file2.txt
+
+C:\Users\d976640\Desktop\telstragit>git status -s
+ M file1.txt
+ D file2.txt
+?? file3.txt
+
+C:\Users\d976640\Desktop\telstragit>git add file3.txt
+
+C:\Users\d976640\Desktop\telstragit>git status -s
+ M file1.txt
+ D file2.txt
+A  file3.txt
+
+C:\Users\d976640\Desktop\telstragit>git commit -m "ne file added fil2 removed"
+[master 57e0a4b] ne file added fil2 removed
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file3.txt
+
+C:\Users\d976640\Desktop\telstragit>git status -s
+ M file1.txt
+ D file2.txt
+
+C:\Users\d976640\Desktop\telstragit>git add .
+
+C:\Users\d976640\Desktop\telstragit>git commit -m "ne file added fil2 removed"
+[master 9b502f0] ne file added fil2 removed
+ 2 files changed, 1 insertion(+), 3 deletions(-)
+ delete mode 100644 file2.txt
+
+C:\Users\d976640\Desktop\telstragit>git status -s
+
+C:\Users\d976640\Desktop\telstragit>git mv file1.txt main.js
+
+C:\Users\d976640\Desktop\telstragit>git status -s
+R  file1.txt -> main.js
+
+C:\Users\d976640\Desktop\telstragit>git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    file1.txt -> main.js
+
+
+C:\Users\d976640\Desktop\telstragit>git commit -m "renamed a file"
+[master f627abf] renamed a file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename file1.txt => main.js (100%)
+
+C:\Users\d976640\Desktop\telstragit>git status -s
+
+C:\Users\d976640\Desktop\telstragit>git diff --staged
+
+C:\Users\d976640\Desktop\telstragit>git diff --staged
+
+C:\Users\d976640\Desktop\telstragit>git add .
+
+C:\Users\d976640\Desktop\telstragit>git diff --staged
+diff --git a/file3.txt b/file3.txt
+index 873fb8d..af6efa0 100644
+--- a/file3.txt
++++ b/file3.txt
+@@ -1 +1,2 @@
+-file3
+\ No newline at end of file
++file3 added new text some text
++some text
+\ No newline at end of file
+diff --git a/main.js b/main.js
+index 73b5a80..69d6c7e 100644
+--- a/main.js
++++ b/main.js
+@@ -1 +1,5 @@
++This is file 1 updated upd
++This is file 1 updated upd
++This is file 1 updated upd
++This is file 1 updated upd
+ This is file 1 updated upd
+\ No newline at end of file
+
+C:\Users\d976640\Desktop\telstragit>git diff --staged
+diff --git a/file3.txt b/file3.txt
+index 873fb8d..af6efa0 100644
+--- a/file3.txt
++++ b/file3.txt
+@@ -1 +1,2 @@
+-file3
+\ No newline at end of file
++file3 added new text some text
++some text
+\ No newline at end of file
+diff --git a/main.js b/main.js
+index 73b5a80..69d6c7e 100644
+--- a/main.js
++++ b/main.js
+@@ -1 +1,5 @@
++This is file 1 updated upd
++This is file 1 updated upd
++This is file 1 updated upd
++This is file 1 updated upd
+ This is file 1 updated upd
+\ No newline at end of file
+
+C:\Users\d976640\Desktop\telstragit>git diff --unstaged
+error: invalid option: --unstaged
+
+C:\Users\d976640\Desktop\telstragit>git diff --committed
+error: invalid option: --committed
+
+C:\Users\d976640\Desktop\telstragit>git diff --staged
+diff --git a/file3.txt b/file3.txt
+index 873fb8d..af6efa0 100644
+--- a/file3.txt
++++ b/file3.txt
+@@ -1 +1,2 @@
+-file3
+\ No newline at end of file
++file3 added new text some text
++some text
+\ No newline at end of file
+diff --git a/main.js b/main.js
+index 73b5a80..69d6c7e 100644
+--- a/main.js
++++ b/main.js
+@@ -1 +1,5 @@
++This is file 1 updated upd
++This is file 1 updated upd
++This is file 1 updated upd
++This is file 1 updated upd
+ This is file 1 updated upd
+\ No newline at end of file
+
+C:\Users\d976640\Desktop\telstragit>git history
+git: 'history' is not a git command. See 'git --help'.
+
+C:\Users\d976640\Desktop\telstragit>git log
+Author: MohitMotiani99 <mohitmotiani211@gmail.com>
+Date:   Mon Aug 9 15:15:29 2021 +0530
+
+    renamed a file
+
+commit 9b502f02784e27bc74fa334ff75bd32bc32d39be
+Author: MohitMotiani99 <mohitmotiani211@gmail.com>
+Date:   Mon Aug 9 15:11:32 2021 +0530
+
+    ne file added fil2 removed
+
+commit 57e0a4b0422e169cbe0efd1ab208637ea83c8a1f
+Author: MohitMotiani99 <mohitmotiani211@gmail.com>
+Date:   Mon Aug 9 15:10:43 2021 +0530
+
+    ne file added fil2 removed
+
+commit dce69b2ff39a6b67d4525d51d2e9bf27850a7a62
+Author: MohitMotiani99 <mohitmotiani211@gmail.com>
+Date:   Mon Aug 9 15:01:32 2021 +0530
+
+    updated file 1
+
+commit 96ea13849b20d458c7888bbe5cb331e94d59f60d
+Author: MohitMotiani99 <mohitmotiani211@gmail.com>
+Date:   Mon Aug 9 14:47:44 2021 +0530
+
+    added file2
+
+
+C:\Users\d976640\Desktop\telstragit>git log --oneline
+f627abf (HEAD -> master) renamed a file
+9b502f0 ne file added fil2 removed
+57e0a4b ne file added fil2 removed
+dce69b2 updated file 1
+96ea138 added file2
+7e197be added new file
+84d346b sort functionality updated price low to high
+
+C:\Users\d976640\Desktop\telstragit>git log --oneline --reverse
+84d346b sort functionality updated price low to high
+7e197be added new file
+96ea138 added file2
+dce69b2 updated file 1
+57e0a4b ne file added fil2 removed
+9b502f0 ne file added fil2 removed
+f627abf (HEAD -> master) renamed a file
+
+C:\Users\d976640\Desktop\telstragit>git show 7e197be
+commit 7e197befa9128935a7061f80c661575db706fd7a
+Author: MohitMotiani99 <mohitmotiani211@gmail.com>
+Date:   Mon Aug 9 14:44:39 2021 +0530
+
+    added new file
+
+diff --git a/file2.txt b/file2.txt
+new file mode 100644
+index 0000000..4419d52
+--- /dev/null
++++ b/file2.txt
+@@ -0,0 +1 @@
++This is file 2
+\ No newline at end of file
+
+C:\Users\d976640\Desktop\telstragit>git show HEAD~1
+commit 9b502f02784e27bc74fa334ff75bd32bc32d39be
+Author: MohitMotiani99 <mohitmotiani211@gmail.com>
+Date:   Mon Aug 9 15:11:32 2021 +0530
+
+    ne file added fil2 removed
+
+diff --git a/file1.txt b/file1.txt
+index 37af48b..73b5a80 100644
+--- a/file1.txt
++++ b/file1.txt
+@@ -1 +1 @@
+-This is file 1 updated
+\ No newline at end of file
++This is file 1 updated upd
+\ No newline at end of file
+diff --git a/file2.txt b/file2.txt
+deleted file mode 100644
+index 822b647..0000000
+--- a/file2.txt
++++ /dev/null
+@@ -1,2 +0,0 @@
+-This is file 2
+-changed
+\ No newline at end of file
+
+C:\Users\d976640\Desktop\telstragit>git show HEAD~1:file3.txt
+file3
+
+C:\Users\d976640\Desktop\telstragit>git remote add origin https://github.com/MohitMotiani99/telstragitdemo.git
+
+C:\Users\d976640\Desktop\telstragit>git push -u origin master
+fatal: unable to access 'https://github.com/MohitMotiani99/telstragitdemo.git/': Failed to connect to github.com port 443: Connection refused
+
+C:\Users\d976640\Desktop\telstragit>git push -u origin master
+fatal: unable to access 'https://github.com/MohitMotiani99/telstragitdemo.git/': Failed to connect to github.com port 443: Connection refused
+
+C:\Users\d976640\Desktop\telstragit>git push -u origin master
+fatal: unable to access 'https://github.com/MohitMotiani99/telstragitdemo.git/': Failed to connect to github.com port 443: Connection refused
+
+C:\Users\d976640\Desktop\telstragit>git remote add origin https://github.com/MohitMotiani99/telstragitdemo.git
+error: remote origin already exists.
+
+C:\Users\d976640\Desktop\telstragit>git push -u origin master
+fatal: unable to access 'https://github.com/MohitMotiani99/telstragitdemo.git/': Failed to connect to github.com port 443: Connection refused
+
+C:\Users\d976640\Desktop\telstragit>git push -u origin master
+fatal: unable to access 'https://github.com/MohitMotiani99/telstragitdemo.git/': Failed to connect to github.com port 443: Connection refused
+
+C:\Users\d976640\Desktop\telstragit>git config --global http.proxy ""
+
+C:\Users\d976640\Desktop\telstragit>git push -u origin master
+fatal: unable to access 'https://github.com/MohitMotiani99/telstragitdemo.git/': Failed to connect to github.com port 443: Connection refused
+
+C:\Users\d976640\Desktop\telstragit>git push -u origin master
+Enumerating objects: 20, done.
+Counting objects: 100% (20/20), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (13/13), done.
+Writing objects: 100% (20/20), 1.72 KiB | 135.00 KiB/s, done.
+Total 20 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/MohitMotiani99/telstragitdemo.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+C:\Users\d976640\Desktop\telstragit>git add file3.txt
+
+C:\Users\d976640\Desktop\telstragit>git commit -m "file3 changed"
+[master afbc7e6] file3 changed
+ 2 files changed, 7 insertions(+), 1 deletion(-)
+
+C:\Users\d976640\Desktop\telstragit>git push -u origin master
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 352 bytes | 176.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/MohitMotiani99/telstragitdemo.git
+   f627abf..afbc7e6  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+C:\Users\d976640\Desktop\telstragit>
+
+
+Microsoft Windows [Version 10.0.18363.1621]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\Users\d976640\Desktop\telstragit>git log --oneline
+afbc7e6 (HEAD -> master, origin/master) file3 changed
+f627abf renamed a file
+9b502f0 ne file added fil2 removed
+57e0a4b ne file added fil2 removed
+dce69b2 updated file 1
+96ea138 added file2
+7e197be added new file
+84d346b sort functionality updated price low to high
+
+C:\Users\d976640\Desktop\telstragit>git diff f627abf 7e197be
+diff --git a/file1.txt b/file1.txt
+new file mode 100644
+index 0000000..28bf5b1
+--- /dev/null
++++ b/file1.txt
+@@ -0,0 +1 @@
++This is file 1
+\ No newline at end of file
+diff --git a/file2.txt b/file2.txt
+new file mode 100644
+index 0000000..4419d52
+--- /dev/null
++++ b/file2.txt
+@@ -0,0 +1 @@
++This is file 2
+\ No newline at end of file
+diff --git a/file3.txt b/file3.txt
+deleted file mode 100644
+index 873fb8d..0000000
+--- a/file3.txt
++++ /dev/null
+@@ -1 +0,0 @@
+-file3
+\ No newline at end of file
+diff --git a/main.js b/main.js
+deleted file mode 100644
+index 73b5a80..0000000
+--- a/main.js
++++ /dev/null
+@@ -1 +0,0 @@
+-This is file 1 updated upd
+\ No newline at end of file
+
+C:\Users\d976640\Desktop\telstragit>git log --oneline
+afbc7e6 (HEAD -> master, origin/master) file3 changed
+f627abf renamed a file
+9b502f0 ne file added fil2 removed
+57e0a4b ne file added fil2 removed
+dce69b2 updated file 1
+96ea138 added file2
+7e197be added new file
+84d346b sort functionality updated price low to high
+
+C:\Users\d976640\Desktop\telstragit>git commit 96ea138
+error: pathspec '96ea138' did not match any file(s) known to git
+
+C:\Users\d976640\Desktop\telstragit>git checkout 96ea138
+Note: switching to '96ea138'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 96ea138 added file2
+
+C:\Users\d976640\Desktop\telstragit>git log --oneline
+96ea138 (HEAD) added file2
+7e197be added new file
+84d346b sort functionality updated price low to high
+
+C:\Users\d976640\Desktop\telstragit>

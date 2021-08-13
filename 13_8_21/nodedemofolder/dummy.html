@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script>
+            //document.cookie="username=jason"
+            function setcookie(){
+                dt=new Date()
+                dt.setFullYear(2021)
+                dt.setDate(19)
+                dt.setMonth(9)
+                document.write(dt)
+                document.cookie="username=harry;expires="+dt
+            }
+            //setting expiry date allows cookie to be set across browsers 
+            //cookie available as long as any browser is open 
+        </script>
+    </head>
+    <body>
+        Cookie Demo
+        <input type="button" value="create cookie" onclick="setcookie()">
+    </body>
+</html>

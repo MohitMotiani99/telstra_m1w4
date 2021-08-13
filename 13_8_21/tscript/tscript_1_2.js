@@ -1,0 +1,22 @@
+var months;
+(function (months) {
+    months["jan"] = "january";
+    months["feb"] = "february";
+    months["mar"] = "march";
+    months["apr"] = "april";
+    months["may"] = "may";
+    months["june"] = "june";
+    months["jul"] = "july";
+    months["aug"] = "august";
+    months["sept"] = "septeber";
+    months["oct"] = "october";
+    months["nov"] = "novemeber";
+    months["dec"] = "december";
+})(months || (months = {}));
+var m1 = months.aug;
+console.log(m1);
+var m2 = months.dec;
+console.log(m2);
+console.log('using number');
+var m3 = months.jul;
+console.log(m3);

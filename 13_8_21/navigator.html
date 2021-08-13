@@ -1,0 +1,42 @@
+<!--navigator object : this contains all the info the browswer
+
+        geoLocation : latitude & long
+        platform
+        appVersion
+        appName
+
+        javaEnabled() to chrcck if java enabled
+
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function getlocation(){
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(function(position){
+                    document.write("latitude "+ position.coords.latitude)
+                    document.write("<br>")
+                    document.write("longitude"+ position.coords.longitude)
+                    document.write("<br>")
+                    document.write(navigator.platform)
+                    document.write("<br>")
+                    document.write(navigator.platform)
+                    document.write("<br>")
+                    document.write(navigator.product)
+                    document.write("<br>")
+                    document.write(navigator.cookieEnabled)
+                    document.write("<br>")
+                    document.write(navigator.javaEnabled())
+                    document.write("<br>")
+                    document.write(navigator.appCodeName)
+                })
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="get location" onclick="getlocation()">
+</body>
+</html>
