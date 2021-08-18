@@ -1,0 +1,51 @@
+REST API
+
+    Representational State Transfer
+    It is architechtural style for distributed hypermedia systems
+
+    #Client Server based architechture
+    #stateless : server rest api maintain state of user like login or not here we are to handle everything
+    #uniform interface : data to render should be uniform or common more of a ui thing
+
+    Operations to be performed
+
+    GET : View list of records
+    Create :Create a new records
+    Update:Update existing records
+    Delete:Delete existing rescord
+
+file
+
+    r
+    w
+    a
+    r+
+    a+
+    w+
+    ax : opens file for appending ,fails if file exists
+    ax+ : opens file for reading and appending ,fails if file exists
+    wx+ : opens file for reading and writing ,fails if file exists
+
+
+
+
+Authentication
+    user provides id and password or passkey
+        identity is crosschecked
+            user is authorized          login is rejected
+
+#JWT
+After authentication user is provided with a secret key that can
+be encrypted
+
+Benefit
+    the proess of authentication and Authorisation can be reduced 
+    to a single sign on 
+    Info exchange can be secure, bcoz JST can be signed
+
+Parts
+    Header
+    Payload
+    Signature
+    
+Authorisation

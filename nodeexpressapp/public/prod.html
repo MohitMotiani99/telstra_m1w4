@@ -1,0 +1,21 @@
+<html>
+    <body>
+        <form method="POST" action="/add">
+            <!--action here is the point where u want to submit ur request-->
+            
+            Enter Product name:
+            <input type="text" name="prod_name">
+            <br>
+            Enter Product price:
+            <input type="number" name="price">
+            <br>
+            Enter Product qty:
+            <input type="number" name="qty">
+            <br>
+            <input type="submit" value="add item">
+        </form>
+        <form method="GET" action="/items">
+            <input type="submit" value="get items get">
+        </form>
+    </body>
+</html>

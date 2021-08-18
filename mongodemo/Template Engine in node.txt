@@ -1,0 +1,6 @@
+    Template Engine in node
+
+#Template engines are used to mix contents with dynamic elements
+#produce desired contents in html by using some programming constructs
+
+Two Template Engines are JADE and VASH

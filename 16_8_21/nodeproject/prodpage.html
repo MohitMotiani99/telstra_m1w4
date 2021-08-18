@@ -1,0 +1,526 @@
+<html>
+    <head>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        <style type="text/css">
+            input[type='button']{
+                background-color: green;
+                color: white;
+                border-style: hidden;
+            }
+            img{
+                width: 10px;
+                height: 10px;
+            }
+        </style>
+        <script>
+
+
+            function getAllProds(){
+                console.log('from get all')
+                var xhttp = new XMLHttpRequest()
+                console.log(xhttp)
+                if(xhttp){
+                    xhttp.onload=function(){
+                        console.log('inside xhhtp')
+                        console.log(xhttp.responseText)
+                        let ans = xhttp.responseText
+                        console.log(ans)
+                        console.log(ans.length)
+                        console.log(ans[0])
+                        ans=JSON.parse(ans)
+
+                        var tab_rows=document.getElementById('table_rows')
+                        tab_rows.innerHTML=''
+                        for(let i=0;i<ans.length;i++){
+                            let tr=document.createElement('tr')
+                            
+                            let td1=document.createElement('td')
+                            td1.innerHTML=ans[i].product_name
+
+                            let td2=document.createElement('td')
+                            td2.innerHTML=ans[i].price
+
+                            let td3=document.createElement('td')
+                            td3.innerHTML=ans[i].quantity
+
+                            tr.appendChild(td1)
+                            tr.appendChild(td2)
+                            tr.appendChild(td3)
+
+                            tab_rows.appendChild(tr)
+                        }
+                    }
+                }
+                xhttp.open('GET','http://localhost:5000/api')
+                xhttp.send()
+
+            }
+            function addp(){
+
+                product_name=document.getElementById('pname').value,
+                    price=document.getElementById('pr').value,
+                    quantity=document.getElementById('qty').value
+
+                if(product_name==null || product_name=='')
+                {
+                    // console.log(document.getElementById('pname').nextSibling.nextSibling)
+                    document.getElementById('pname').nextSibling.nextSibling.style.display='inline'
+                    document.getElementById('pname').focus()
+                    return
+                }
+                if(price==null || price=='')
+                {
+                    document.getElementById('pr').nextSibling.nextSibling.style.display='inline'
+                    document.getElementById('pr').focus()
+                    return
+                }
+                if(quantity==null || quantity=='')
+                {
+                    document.getElementById('qty').nextSibling.nextSibling.style.display='inline'
+                    document.getElementById('qty').focus()
+                    return
+                }
+
+                document.getElementById('pname').nextSibling.nextSibling.style.display='none'
+                document.getElementById('pr').nextSibling.nextSibling.style.display='none'
+                document.getElementById('qty').nextSibling.nextSibling.style.display='none'
+
+                var xhttp=new XMLHttpRequest()
+                
+                    
+                    document.getElementById('pname').value='',
+                    document.getElementById('pr').value='',
+                    document.getElementById('qty').value=''
+
+                if(xhttp){
+                    xhttp.onload=function(){
+                        getAllProds()
+                        var noti=document.getElementById('noti')
+                        noti.style.display='inline'
+                        noti.innerHTML='Product Added Successfully'
+                        setTimeout(()=>{
+                            noti.style.display='none'
+                        },1500)
+
+                    }
+                    xhttp.open('POST','http://localhost:5000/add')
+                    xhttp.send(product_name+'&'+price+'&'+quantity)
+                    getAllProds()
+                }
+
+                
+
+
+            }
+            //var ans='1'
+            //var green = 0
+            function checkProd(ele){
+               product_name=ele.value
+
+               if(product_name==null || product_name==''){
+                    ele.nextSibling.nextSibling.style.display='inline'
+                    ele.nextSibling.nextSibling.innerHTML='Required Field'
+                    
+                    ele.focus()
+                    return
+
+               }
+                ele.nextSibling.nextSibling.style.display='none'
+
+                var xhttp=new XMLHttpRequest()
+
+                
+                if(xhttp){
+                    xhttp.onload=function(){
+                        
+                        let ans=xhttp.responseText
+                        if(ans.toString()=='0'){
+                            ele.nextSibling.nextSibling.style.display='inline'
+                            ele.nextSibling.nextSibling.innerHTML='Product Does not Exist'
+                    
+                            ele.focus()
+
+                        }
+                        else if(ans.toString()=='1'){
+                            ele.nextSibling.nextSibling.style.display='none'
+                        }
+                    }
+                    xhttp.open('POST','http://localhost:5000/checkProd')
+                    xhttp.send(product_name)
+                }
+            }
+
+            function delp(){
+
+
+
+                product_name=document.getElementById('pname_del').value
+                // if(product_name==''||product_name==null){
+                //     console.log('in if1')
+                //     document.getElementById('pname_del').nextSibling.nextSibling.style.display='inline'
+                //     document.getElementById('pname_del').nextSibling.nextSibling.innerHTML='Required Field'
+                //     //green=1
+                //     document.getElementById('pname_del').focus()
+                //     return
+                // }
+                // let ans =checkProd(product_name)
+                // console.log(ans+' '+typeof(ans))
+                // //setTimeout(()={},500)
+                
+                // if(ans=='0'){
+                //     console.log('in if2')
+                //     document.getElementById('pname_del').nextSibling.nextSibling.style.display='inline'
+                //     document.getElementById('pname_del').nextSibling.nextSibling.innerHTML='Product Does not Exist'
+                //     //green=1
+                //     document.getElementById('pname_del').focus()
+
+                //     //console.log(ans+' '+typeof(ans))
+
+                //     return
+                // }
+                // else if(ans=='1'){
+                //     console.log('in else')
+                
+                
+                if(document.getElementById('pname_del').nextSibling.nextSibling.style.display=='none'){
+
+                var xhttp=new XMLHttpRequest()
+                
+                document.getElementById('pname_del').value=''
+
+                if(xhttp){
+                    xhttp.onload=function(){
+                        getAllProds()
+
+                        document.getElementById('pname_del').nextSibling.nextSibling.style.display='none'
+                        document.getElementById('pname_del').nextSibling.nextSibling.innerHTML=''
+                
+
+                        var noti=document.getElementById('noti')
+                        noti.style.display='inline'
+                        noti.innerHTML='Product Removed Successfully'
+                        setTimeout(()=>{
+                            noti.style.display='none'
+                        },1500)
+                    }
+                    xhttp.open('DELETE','http://localhost:5000/del')
+                    xhttp.send(product_name)
+                }
+                
+               
+              }
+              else{
+                alert('Product Does Not Exist')
+                document.getElementById('pname_del').focus()
+              }
+            }
+            function updp(){
+                var xhttp=new XMLHttpRequest()
+                
+                    product_name=document.getElementById('pname_upd').value
+                    price=document.getElementById('pr_upd').value
+                    quantity=document.getElementById('qty_upd').value
+
+
+                    // if(product_name==''||product_name==null){
+                    // document.getElementById('pname_upd').nextSibling.nextSibling.style.display='inline'
+                    // document.getElementById('pname_upd').focus()
+                    // return
+                    // }
+
+                    if(document.getElementById('pname_upd').nextSibling.nextSibling.style.display=='none'){
+
+                    if(document.getElementById('pr_i').style.display=='inline'){
+                            if(price==null || price=='')
+                                {
+                                    document.getElementById('pr_upd').nextSibling.nextSibling.style.display='inline'
+                                    document.getElementById('pr_upd').focus()
+                                    return
+                                }
+                    }
+                    if(document.getElementById('qty_i').style.display=='inline'){
+
+                        if(quantity==null || quantity=='')
+                            {
+                                document.getElementById('qty_upd').nextSibling.nextSibling.style.display='inline'
+                                document.getElementById('qty_upd').focus()
+                                return
+                            }
+
+                    }
+
+                document.getElementById('pname_upd').nextSibling.nextSibling.style.display='none'
+                document.getElementById('pr_upd').nextSibling.nextSibling.style.display='none'
+                document.getElementById('qty_upd').nextSibling.nextSibling.style.display='none'
+
+
+                    document.getElementById('pname_upd').value=''
+                    document.getElementById('pr_upd').value=''
+                    document.getElementById('qty_upd').value=''                    
+
+
+                if(xhttp){
+                    xhttp.onload=function(){
+                        getAllProds()
+                        var noti=document.getElementById('noti')
+                        noti.style.display='inline'
+                        noti.innerHTML='Product Updated Successfully'
+                        setTimeout(()=>{
+                            noti.style.display='none'
+                        },1500)
+
+                    }
+                    xhttp.open('PATCH','http://localhost:5000/updt')
+                    xhttp.send(product_name+'&'+price+'&'+quantity)
+                }
+
+                }
+                else{
+                    alert('Product Does Not Exist')
+                    document.getElementById('pname_upd').focus()
+                }
+
+            }
+            function srch(){
+                var xhttp=new XMLHttpRequest()
+                
+                product_name=document.getElementById('pname_sr').value
+                if(product_name==null || product_name==''){
+                    document.getElementById('table_rows_f').innerHTML=''
+                    return;
+                }
+                if(xhttp){
+                    xhttp.onload=function(){
+                        console.log(xhttp.responseText)
+                        let ans = xhttp.responseText
+                        console.log(ans)
+                        console.log(ans.length)
+                        console.log(ans[0])
+                        ans=JSON.parse(ans)
+
+                        var tab_rows_f=document.getElementById('table_rows_f')
+                        tab_rows_f.innerHTML=''
+                        for(let i=0;i<ans.length;i++){
+                            let tr=document.createElement('tr')
+                            
+                            let td1=document.createElement('td')
+                            td1.innerHTML=ans[i].product_name
+
+                            let td2=document.createElement('td')
+                            td2.innerHTML=ans[i].price
+
+                            let td3=document.createElement('td')
+                            td3.innerHTML=ans[i].quantity
+
+                            tr.appendChild(td1)
+                            tr.appendChild(td2)
+                            tr.appendChild(td3)
+
+                            tab_rows_f.appendChild(tr)
+                        }
+
+                    }
+                    xhttp.open('POST','http://localhost:5000/search')
+                    xhttp.send(product_name)
+                }
+            }
+            function showpr(){
+                console.log('here in pr')
+                if(document.getElementById('pr_i').style.display=='none')
+                    document.getElementById('pr_i').style.display='inline'
+                else
+                    document.getElementById('pr_i').style.display='none'
+
+                document.getElementById('qty_i').style.display='none'
+            }
+            function showqty(){
+                if(document.getElementById('qty_i').style.display=='none')
+                    document.getElementById('qty_i').style.display='inline'
+                else
+                    document.getElementById('qty_i').style.display='none'
+                document.getElementById('pr_i').style.display='none'
+            }
+            function outshine(ele){
+                //ele.nextSibling.nextSibling.style.display='none'
+            }
+        </script>
+    </head>
+    <body onload="getAllProds()">
+
+        <div class="container-fluid">
+            <div class="jumbotron" style="height: 30px;padding-top: 20px;">
+                <h1>Product CRUD Services</h1>
+            </div>
+            <div class="row">
+                <span class="badge badge-success col-sm-12" style="height:40px;font-size: 20px;display: none;" id="noti">Success</span>
+            </div>
+            <div class="row">
+                <div class="card col-sm-6" >
+                    <div class="card-header bg-primary text-white">
+                        Add Product
+                    </div>
+                    <form action="/" method="POST" role='form'>
+                          <div class="form-group card-text">
+                              <label for="pname">Enter Product Name:</label><br>
+                              <input type="text" name="pname" id="pname" class="form-control" onfocusout="outshine(this)">
+                              <small style="display: none">Required Field</small>
+                          </div>
+                          <div class="form-group card-text">
+                              <label for="pr">Enter Product Price:</label><br>
+                              <input type="number" name="pr" id="pr" class="form-control" onfocusout="outshine(this)">
+                              <small style="display: none">Required Field</small>
+                          </div>
+                          <div class="form-group card-text">
+                              <label for="qty">Enter Product Quantity:</label><br>
+                              <input type="number" name="qty" id="qty" class="form-control" onfocusout="outshine(this)">
+                              <small style="display: none">Required Field</small>
+                          </div>
+                          <div class="form-group">
+                              <input type="button" value="Add Product" onclick="addp()">
+                          </div>
+                    </form>
+                </div>
+
+                <div class="card col-sm-6">
+                    <div class="card-header bg-primary text-white">
+                        Update Product
+                    </div>
+                    <form action="/" method="POST" role='form'>
+                          <div class="form-group card-text">
+                              <label for="pname_upd">Enter Product Name for Updation:</label><br>
+                              <input type="text" name="pname_upd" id="pname_upd" class="form-control" onkeyup="checkProd(this)"
+                              onfocusout="outshine(this)">
+                              <small style="display:none"></small>
+                          </div>
+                          Field to Update:          
+                          <div class="form-group card-text">
+                              <input type="radio" name ="sel" id="prs" value="pr" onclick="showpr()">Price
+                              <input type="radio" name ="sel" id="qtys" value="qty" onclick="showqty()" >Quantity
+                          </div>
+                          <div id="pr_i" class="form-group card-text" style="display:none">
+                              <label for="pr_upd">Enter New Product Price:</label><br>
+                              <input type="number" name="pr_upd" id="pr_upd" class="form-control" onfocusout="outshine(this)">
+                              <small style="display:none">Required Field</small>
+                          </div>
+                          <div id="qty_i" class="form-group card-text" style="display:none;">
+                              <label for="qty_upd">Enter New Product Quantity:</label><br>
+                              <input type="number" name="qty_upd" id="qty_upd" class="form-control" onfocusout="outshine(this)">
+                              <small style="display:none">Required Field</small>
+                          </div>
+                          <div class="form-group">
+                              <input type="button" value="Update Product" onclick="updp()">
+                          </div>
+                    </form>
+                </div>
+
+            </div>
+            <div class="row">
+
+                <div class="card col-sm-4">
+                    <div class="card-header bg-primary text-white">
+                        Delete Product
+                    </div>
+                    <form action="/" method="POST" role='form'>
+                          <div class="form-group card-text">
+                              <label for="pname_del">Enter Name of the product to Remove:</label><br>
+                              <input type="text" name="pname_del" id="pname_del" class="form-control" onkeyup="checkProd(this)" onfocusout="outshine(this)">
+                              <small style="display:none;"></small>
+                          </div>
+                          <div class="form-group">
+                              <input type="button" value="Remove Product" onclick="delp()">
+                          </div>
+                    </form>
+                </div>
+
+                
+                <div class="card col-sm-4">
+                    <div class="card-header bg-primary text-white">
+                        Find Product
+                    </div>
+                    <form action="/" method="POST" role='form'>
+                          <div class="form-group card-text">
+                              <label for="pname_sr">Enter Product Name to Search:</label><br>
+                              <input type="text" name="pname_sr" id="pname_sr" class="form-control" onkeyup="srch()">
+                          </div>
+                          <table class="table table-bordered" >
+                            <thead>
+                                <tr>
+                                    <th>Product Name</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table_rows_f">
+                                
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+
+                <div class="card col-sm-4">
+                    <form action="/" method="GET" role='form'>
+                        <div class="card-header bg-primary text-white">
+                            Current Products
+                        </div>
+                        <table class="table table-bordered" >
+                            <thead>
+                                <tr>
+                                    <th>Product Name</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table_rows">
+                                
+                            </tbody>
+                        </table>
+                    </form>
+                    
+                </div>
+
+
+            </div>
+            
+        </div>
+
+
+        <!-- <form method='POST' action="/formreq" id="form">
+            Enter Product Name:
+            <input type="text" id="pname" name="pname">
+            <br>
+            Enter Product Price:
+            <input type="text" id='pr' name="pr">
+            <br>
+            Enter Product Quantity:
+            <input type="number" id="qty" name="qty">
+            <br>
+            <input type="button" value="Add" onclick="addp()">
+            <br>
+            <br>
+            Enter Prod name to delete:
+            <input type="text" id="pname_del">
+            <br>
+            <input type="button" value="Delete" onclick="delp()">
+            <br>
+            <br>
+            Enter Prod name to Update:
+            <input type="text" id="pname_upd">
+            <br>
+            Enter Updated Price:
+            <input type="text" id="pr_upd">
+            <br>
+            <input type="button" value="Update" onclick="updp()">
+            <br>
+            Enter Product name to search:
+            <input type="text" id="pname_sr" onkeyup="srch()">
+            <br>
+            <p id="add_res"></p>
+        </form> -->
+    </body>
+</html>

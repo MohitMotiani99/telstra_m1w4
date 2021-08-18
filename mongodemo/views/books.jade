@@ -1,0 +1,13 @@
+doctype html
+html 
+    head
+        title Book Page 
+    body 
+        
+        h1 Book Page
+        input(type="text",name='bookname')
+        input(type="submit",value='send')
+        select(name="books")
+        ul
+            each b in bookresult 
+                li=b.bookname+" "+b.price 

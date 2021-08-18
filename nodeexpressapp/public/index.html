@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <script>
+            
+            function addi(){   
+            console.log('In addi')
+                var xhttp = new XMLHttpRequest()
+                if(xhttp){
+                    xhttp.onload=function(){
+                        var prods = JSON.parse(xhttp.responseText);
+                        console.log(prods)
+                        for(let i=0;i<prods.length;i++){
+                            itemname=prods[i].itemname
+                            price=prods[i].price
+
+                            document.getElementById('ajaxdata').innerHTML+='<li>'+itemname+'  '+price+'</li>'
+                        }
+                        
+                    }
+                    xhttp.open('GET','/showitems')
+                    xhttp.send()
+
+                }
+            }
+        }
+        </script>
+    </head>
+    <body>
+        <h1>
+            Welcome
+        </h1>
+        <form method="POST" action="/">
+            Enter item name:
+            <input type="text" name="itemname">
+            Enter Price:
+            <input type="text" name="price">
+            <input type='submit' value="Add">
+        </form>
+        <ul id="ajaxdata"></ul>
+    </body>
+</html>
